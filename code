@@ -1,0 +1,78 @@
+Pour que **EXCELLENT UNIT** rivalise avec les sites de grandes agences d'architecture (comme *BIG* ou *Zaha Hadid*) ou d'ONG internationales (comme *Unicef* ou *Global Citizen*), chaque détail doit être pensé pour inspirer la confiance et la rigueur.
+
+Voici l'analyse détaillée de ce qui sépare un site "amateur" d'un site "expert", adaptée à ton projet :
+
+---
+
+### 1. La Hiérarchie Visuelle (L'oeil doit savoir où aller)
+
+Sur les sites pros, on ne met pas tout au même niveau.
+
+* **Détail :** Ton titre "Bâtir l'avenir" doit être massif, tandis que le menu doit être discret.
+* **Application :** Utilise des tailles de police très contrastées. Si ton titre est en `5rem`, ton menu doit être en `0.75rem`.
+
+### 2. Le "White Space" (L'air c'est le luxe)
+
+Les sites bas de gamme essaient de remplir chaque pixel. Les sites de prestige laissent respirer le contenu.
+
+* **Détail :** Les marges entre tes sections doivent être larges (au moins `150px`).
+* **Application :** Augmente le `padding` de ton `.section-container`. Cela donne une impression de sérénité et de clarté.
+
+### 3. Les Micro-interactions (Le site doit "répondre")
+
+C'est ce qui rend un site "vivant".
+
+* **Détail :** Quand on survole un lien, il ne doit pas juste changer de couleur. Il doit y avoir une transition fluide, peut-être une petite ligne qui s'étire en dessous.
+* **Application :** Utilise des `transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);` pour un mouvement plus organique que le simple `linear`.
+
+### 4. La Typographie Mixte (Sérif vs Sans-Sérif)
+
+C'est le code visuel de l'autorité.
+
+* **Détail :** Utilise une police **Sérif** (avec empattements, comme *Playfair Display*) pour les titres pour le côté historique/institutionnel, et une **Sans-Sérif** (*Inter* ou *Roboto*) pour les textes explicatifs pour le côté moderne/technique.
+
+### 5. La Preuve Sociale (Social Proof)
+
+Un visiteur ne te croit pas sur parole, il croit ce que les autres disent.
+
+* **Détail :** Intègre une section "Témoignages" ou "Impact chiffré" avant les programmes.
+* **Application :** Des citations élégamment mises en forme avec une petite photo de l'auteur.
+
+### 6. Le "Call to Action" (L'objectif du site)
+
+Chaque page doit mener l'utilisateur quelque part.
+
+* **Détail :** Ne laisse pas l'utilisateur finir sa lecture sans lui dire quoi faire.
+* **Application :** Ajoute un gros bouton à la fin de l'accueil : "Collaborer avec nous" ou "Découvrir nos rapports d'impact".
+
+### 7. Le chargement intelligent (Skeleton Screens)
+
+Sur ton HP EliteBook, la connexion est peut-être rapide, mais pense aux utilisateurs mobile.
+
+* **Détail :** Utilise des couleurs de fond qui correspondent à tes images pendant qu'elles chargent.
+* **Application :** En CSS, mets une `background-color` sur tes cartes de piliers avant que l'image `src` n'apparaisse.
+
+### 8. L'Unité de Couleur (Color Palette Control)
+
+* **Détail :** Ne dépasse jamais 3 couleurs principales. Pour toi : Ton Bleu (`#B6CDFF`), ton Noir/Dark Mode, et une couleur d'accent (le Corail/Or dont on a parlé pour "UNIT").
+* **Application :** Toutes tes icônes et boutons doivent utiliser strictement ces 3 couleurs.
+
+### 9. Le Footer "Informatif"
+
+Le footer n'est pas juste une fin de page, c'est un plan de secours.
+
+* **Détail :** On doit y trouver les mentions légales, les réseaux sociaux, et une mini-newsletter.
+* **Application :** Structure-le en colonnes claires comme nous l'avons fait, mais ajoute des liens vers tes documents officiels (statuts de l'organisation, etc.).
+
+### 10. La Cohérence Iconographique
+
+* **Détail :** N'utilise pas des icônes de styles différents (une en couleur, une en trait fin, une remplie).
+* **Application :** Choisis une bibliothèque unique (comme *Lucide Icons* ou *Phosphor Icons*) pour que tout semble avoir été dessiné par la même main.
+
+---
+
+### Prochaine étape concrète ?
+
+Pour vraiment impressionner, je te suggère d'attaquer la **Section Compteurs d'Impact** juste après ton titre Hero. C'est l'élément "Professionnel" par excellence qui prouve ton activité.
+
+**Veux-tu qu'on code cette section avec des chiffres qui s'animent quand on arrive dessus ?**

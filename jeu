@@ -1,0 +1,92 @@
+sudo apt update && sudo apt install steam
+    ```
+3.  Une fois installé, lancez Steam depuis votre menu d'applications, créez un compte (ou connectez-vous) et laissez-le faire ses mises à jour initiales.
+
+---
+
+### Étape 2 : Télécharger les jeux
+1.  Dans Steam, allez dans l'onglet **Magasin** (Store).
+2.  Recherchez **"Hacknet"** ou **"Turing Complete"**.
+3.  Une fois achetés, allez dans votre **Bibliothèque**.
+4.  Cliquez sur le bouton bleu **Installer**. Steam s'occupera de télécharger la version spécifique à Linux automatiquement.
+
+---
+
+### Étape 3 : Optimisation (Si besoin)
+Si un jeu ne se lance pas directement (ce qui peut arriver sur certaines configurations Linux), voici la petite astuce de développeur :
+*   Faites un **clic droit** sur le jeu dans votre bibliothèque Steam.
+*   Allez dans **Propriétés > Compatibilité**.
+*   Cochez "Forcer l'utilisation d'un outil de compatibilité Steam Play spécifique".
+*   Sélectionnez **Proton Experimental** ou une version récente de **Proton**.
+
+### Alternatives gratuites (Sans téléchargement lourd)
+Si vous ne voulez pas passer par Steam tout de suite, vous pouvez pratiquer le "Pour télécharger et installer **Hacknet** et **Turing Complete** sur votre HP EliteBook sous Linux Mint, la méthode la plus fiable en 2026 est d'utiliser **Steam**, car ces deux jeux possèdent des versions natives pour Linux qui fonctionnent très bien.
+
+Voici les étapes à suivre :
+
+### Étape 1 : Installer Steam sur Linux Mint
+Le plus simple est d'utiliser le terminal (puisque vous avez l'habitude de l'utiliser pour vos bots) :
+
+1.  Ouvrez votre terminal.
+2.  Lancez l'installation avec cette commande :
+    ```bash
+    sudo apt update && sudo apt install steam
+    ```
+3.  Une fois installé, lancez Steam depuis votre menu d'applications, créez un compte (ou connectez-vous) et laissez-le faire ses mises à jour initiales.
+
+---
+
+### Étape 2 : Télécharger les jeux
+1.  Dans Steam, allez dans l'onglet **Magasin** (Store).
+2.  Recherchez **"Hacknet"** ou **"Turing Complete"**.
+3.  Une fois achetés, allez dans votre **Bibliothèque**.
+4.  Cliquez sur le bouton bleu **Installer**. Steam s'occupera de télécharger la version spécifique à Linux automatiquement.
+
+---
+
+### Étape 3 : Optimisation (Si besoin)
+Si un jeu ne se lance pas directement (ce qui peut arriver sur certaines configurations Linux), voici la petite astuce de développeur :
+*   Faites un **clic droit** sur le jeu dans votre bibliothèque Steam.
+*   Allez dans **Propriétés > Compatibilité**.
+*   Cochez "Forcer l'utilisation d'un outil de compatibilité Steam Play spécifique".
+*   Sélectionnez **Proton Experimental** ou une version récente de **Proton**.
+
+### Alternatives gratuites (Sans téléchargement lourd)
+Si vous ne voulez pas passer par Steam tout de suite, vous pouvez pratiquer le "hacking" et le "développement" directement via votre navigateur :
+*   **[OverTheWire (Bandit)](https://overthewire.org/wPour télécharger et installer **Hacknet** et **Turing Complete** sur votre HP EliteBook sous Linux Mint, la méthode la plus fiable en 2026 est d'utiliser **Steam**, car ces deux jeux possèdent des versions natives pour Linux qui fonctionnent très bien.
+
+Voici les étapes à suivre :
+
+### Étape 1 : Installer Steam sur Linux Mint
+Le plus simple est d'utiliser le terminal (puisque vous avez l'habitude de l'utiliser pour vos bots) :
+
+1.  Ouvrez votre terminal.
+2.  Lancez l'installation avec cette commande :
+    ```bash
+    sudo apt update && sudo apt install steam
+    ```
+3.  Une fois installé, lancez Steam depuis votre menu d'applications, créez un compte (ou connectez-vous) et laissez-le faire ses mises à jour initiales.
+
+---
+
+### Étape 2 : Télécharger les jeux
+1.  Dans Steam, allez dans l'onglet **Magasin** (Store).
+2.  Recherchez **"Hacknet"** ou **"Turing Complete"**.
+3.  Une fois achetés, allez dans votre **Bibliothèque**.
+4.  Cliquez sur le bouton bleu **Installer**. Steam s'occupera de télécharger la version spécifique à Linux automatiquement.
+
+---
+
+### Étape 3 : Optimisation (Si besoin)
+Si un jeu ne se lance pas directement (ce qui peut arriver sur certaines configurations Linux), voici la petite astuce de développeur :
+*   Faites un **clic droit** sur le jeu dans votre bibliothèque Steam.
+*   Allez dans **Propriétés > Compatibilité**.
+*   Cochez "Forcer l'utilisation d'un outil de compatibilité Steam Play spécifique".
+*   Sélectionnez **Proton Experimental** ou une version récente de **Proton**.
+
+### Alternatives gratuites (Sans téléchargement lourd)
+Si vous ne voulez pas passer par Steam tout de suite, vous pouvez pratiquer le "hacking" et le "développement" directement via votre navigateur :
+*   **[OverTheWire (Bandit)](https://overthewire.org/wargames/bandit/) :** C'est un "Wargame" gratuit qui se joue en SSH dans votre terminal. C'est le meilleur moyen d'apprendre les commandes Linux réelles utilisées par les hackers.
+*   **[CodinGame](https://www.codingame.com) :** Pour pratiquer vos algorithmes dans un environnement de jeu.
+
+Lequel de ces deux jeux comptez-vous lancer en premier sur votre EliteBook ?
