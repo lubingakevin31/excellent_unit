@@ -1,256 +1,385 @@
+
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
-    <title>EXCELLENT UNIT</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXCELLENT UNIT — Future Begins Here</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="pilier-card">
-        <div class="skeleton skeleton-image"></div>
-        <div class="pilier-content">
-            <div class="skeleton skeleton-text" style="width: 30%"></div>
-            <div class="skeleton skeleton-title"></div>
-        </div>
+
+<div class="blur-orb orb-1"></div>
+<div class="blur-orb orb-2"></div>
+<div class="cursor"></div>
+
+<nav>
+
+    <div class="logo">
+        EXCELLENT <span>UNIT</span>
     </div>
-    <div class="cursor-follower"></div>
-    <nav class="glass-nav">
-        <div class="nav-container">
-           <div class="logo">
-                <span class="logo-excellent">EXCELLENT</span> 
-                <span class="logo-unit">UNIT</span>
+
+    <ul class="nav-links">
+        <li><a href="#">Future</a></li>
+        <li><a href="#">Innovation</a></li>
+        <li><a href="#">Univers</a></li>
+        <li><a href="#">Impact</a></li>
+        <li><a href="#">Alliance</a></li>
+    </ul>
+
+    <div class="nav-actions">
+
+        <div class="search">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Explorer le futur">
+        </div>
+
+        <button class="theme-toggle" id="themeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <div class="hero-grid">
+
+        <div class="hero-left reveal">
+
+            <small>
+                <i class="fas fa-sparkles"></i>
+                Future Human Experience
+            </small>
+
+            <h1>
+                Créer
+                <span>
+                    l'impossible.
+                </span>
+                <br>
+                Inspirer
+                le monde.
+            </h1>
+
+            <p>
+                EXCELLENT UNIT fusionne innovation, intelligence visuelle, technologie et vision humaine afin de construire des expériences capables de transformer les générations futures.
+            </p>
+
+            <div class="hero-actions">
+
+                <a href="#" class="btn-primary">
+                    Entrer dans l'univers
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+
+                <a href="#" class="btn-secondary">
+                    Explorer les projets
+                </a>
+
             </div>
-            
-            <ul class="nav-links">
+
+        </div>
+
+        <div class="hero-right reveal">
+
+            <div class="floating-card card-main">
+                <img src="./IMG/archi.jpeg" alt="Innovation">
+            </div>
+
+            <div class="floating-card card-small">
+                <img src="./IMG/enfants.jpeg" alt="Humanité">
+            </div>
+
+            <div class="floating-card card-top">
+                <img src="./IMG/savoir.jpeg" alt="Savoir">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-head reveal">
+
+        <small>Impact mondial</small>
+
+        <h2>
+            Une nouvelle génération
+            d'influence.
+        </h2>
+
+    </div>
+
+    <div class="stats">
+
+        <div class="stat-box reveal">
+            <h3>18+</h3>
+            <p>Programmes visionnaires</p>
+        </div>
+
+        <div class="stat-box reveal">
+            <h3>24K</h3>
+            <p>Communautés touchées</p>
+        </div>
+
+        <div class="stat-box reveal">
+            <h3>09</h3>
+            <p>Centres d'innovation</p>
+        </div>
+
+        <div class="stat-box reveal">
+            <h3>99%</h3>
+            <p>Expérience immersive</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="section">
+
+    <div class="section-head reveal">
+
+        <small>Nos univers</small>
+
+        <h2>
+            Chaque idée devient
+            une expérience.
+        </h2>
+
+    </div>
+
+    <div class="worlds">
+
+        <div class="world-card reveal">
+
+            <img src="./IMG/archi.jpeg" alt="Architecture">
+
+            <div class="world-overlay">
+                <small>01 • Vision</small>
+                <h3>Architecture Future</h3>
+                <p>Imaginer des structures capables d'unir émotion, technologie et élégance.</p>
+            </div>
+
+        </div>
+
+        <div class="world-card reveal">
+
+            <img src="./IMG/savoir.jpeg" alt="Savoir">
+
+            <div class="world-overlay">
+                <small>02 • Intelligence</small>
+                <h3>Éducation Augmentée</h3>
+                <p>Développer des leaders prêts à transformer les réalités du futur.</p>
+            </div>
+
+        </div>
+
+        <div class="world-card reveal">
+
+            <img src="./IMG/environnement.jpeg" alt="Nature">
+
+            <div class="world-overlay">
+                <small>03 • Équilibre</small>
+                <h3>Nature & Technologie</h3>
+                <p>Créer un monde où innovation et environnement avancent ensemble.</p>
+            </div>
+
+        </div>
+
+        <div class="world-card reveal">
+
+            <img src="./IMG/Les femmes noir.jpeg" alt="Leadership">
+
+            <div class="world-overlay">
+                <small>04 • Leadership</small>
+                <h3>Puissance Féminine</h3>
+                <p>Accélérer l’émergence d’une nouvelle génération de leaders inspirants.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <h2>
+                EXCELLENT <span>UNIT</span>
+            </h2>
+
+            <p>
+                Une expérience futuriste conçue pour connecter vision, innovation et humanité dans un seul univers.
+            </p>
+
+            <div class="socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+
+        </div>
+
+        <div class="footer-column">
+
+            <h4>Navigation</h4>
+
+            <ul>
                 <li><a href="#">Accueil</a></li>
-                <li><a href="#">À Propos</a></li>
-                <li><a href="#">Programmes</a></li>
-                <li><a href="#">Partenariats</a></li>
-                <li><a href="#">Actualités</a></li>
-                <li><a href="#">Réalisations</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Admin</a></li>
+                <li><a href="#">Univers</a></li>
+                <li><a href="#">Impact</a></li>
+                <li><a href="#">Innovation</a></li>
             </ul>
 
-            <div class="nav-right" style="display: flex; align-items: center; gap: 15px;">
-                <div class="search-box">
-                    <input type="text" placeholder="Rechercher..." id="search-input">
-                    <button id="search-btn">🔍</button>
-                </div>
+        </div>
 
-                <button id="theme-toggle">MODE</button>
-            </div>
+        <div class="footer-column">
+
+            <h4>Ressources</h4>
+
+            <ul>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Partenaires</a></li>
+                <li><a href="#">Actualités</a></li>
+                <li><a href="#">Administration</a></li>
+            </ul>
 
         </div>
-    </nav>
 
-    <main>
-        <section class="section-container hero-section reveal">
-            <span class="kicker">Innovation & Impact Social</span>
-            
-            <h1 class="hero-text">
-                <span class="text-highlight">Construire des systèmes pour une</span>
-                <span class="logo-unit">unite durable.</span>
-            </h1>
-            
-            <p class="hero-description">
-                Nous transformons les défis structurels en opportunités de croissance pour les communautés à travers cinq piliers stratégiques.
+        <div class="footer-column">
+
+            <h4>Recevoir les nouveautés</h4>
+
+            <p>
+                Entrez dans l'univers EXCELLENT UNIT et découvrez les prochaines innovations.
             </p>
-            <div class="cta-wrapper">
-                <a href="#contact" class="btn-primary">
-                    <span>Commencer un projet</span>
-                    <svg viewBox="0 0 24 24" width="20" height="20">
-                        <path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                </a>
-                
-                <a href="#projets" class="btn-secondary">Voir nos réalisations</a>
-            </div>
-        </section>
-        <section class="section-container stats-section reveal">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="12">0</span>
-                    <p class="stat-label">Projets livrés</p>
-                </div>
-                
-                <div class="stat-item">
-                    <span class="stat-number" data-target="500">0</span>
-                    <p class="stat-label">Bénéficiaires</p>
-                </div>
-                
-                <div class="stat-item">
-                    <span class="stat-number" data-target="5">0</span>
-                    <p class="stat-label">Provinces couvertes</p>
-                </div>
 
-                <div class="stat-item">
-                    <span class="stat-number" data-target="100">0</span><span>%</span>
-                    <p class="stat-label">Engagement durable</p>
-                </div>
-            </div>
-        </section>
-        
-        <section class="section-container">
-            <div class="piliers-row">
-    
-                <div class="pilier-card reveal">
-                    <img src="./IMG/archi.jpeg" alt="Architecture">
-                    <div class="pilier-content">
-                        <span class="pilier-number">01. Technique</span>
-                        <h3>Architecture</h3>
-                    </div>
-                </div>
-
-                <div class="pilier-card reveal">
-                    <img src="./IMG/savoir.jpeg" alt="Éducation">
-                    <div class="pilier-content">
-                        <span class="pilier-number">02. Savoir</span>
-                        <h3>Éducation</h3>
-                    </div>
-                </div>
-
-                <div class="pilier-card reveal">
-                    <img src="./IMG/environnement.jpeg" alt="Environnement">
-                    <div class="pilier-content">
-                        <span class="pilier-number">03. Nature</span>
-                        <h3>Environnement</h3>
-                    </div>
-                </div>
-
-                <div class="pilier-card reveal">
-                    <img src="./IMG/enfants.jpeg" alt="Enfance">
-                    <div class="pilier-content">
-                        <span class="pilier-number">04. Protection</span>
-                        <h3>Enfance</h3>
-                    </div>
-                </div>
-
-                <div class="pilier-card reveal">
-                    <img src="./IMG/Les femmes noir.jpeg" alt="Droit des Femmes">
-                    <div class="pilier-content">
-                        <span class="pilier-number">05. Impact</span>
-                        <h3>Droit des Femmes</h3>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-   <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-col brand-col">
-                <h2 class="footer-logo">EXCELLENT <span>UNIT</span></h2>
-                <p>Bâtir des systèmes durables pour l'excellence et l'unité des communautés.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
+            <div class="newsletter">
+                <input type="email" placeholder="Votre adresse email">
+                <button>S'inscrire</button>
             </div>
 
-            <div class="footer-col">
-                <h4>Organisation</h4>
-                <ul>
-                    <li><a href="#">À Propos</a></li>
-                    <li><a href="#">Nos Piliers</a></li>
-                    <li><a href="#">Rapports d'Impact</a></li>
-                    <li><a href="#">Carrières</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Ressources</h4>
-                <ul>
-                    <li><a href="#">Mentions Légales</a></li>
-                    <li><a href="#">Confidentialité</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Admin</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col newsletter-col">
-                <h4>Restez informé</h4>
-                <form class="newsletter-form">
-                    <div class="input-group">
-                        <input type="email" placeholder="Votre adresse email" required>
-                        <button type="submit">S'abonner</button>
-                    </div>
-                </form>
-            </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 EXCELLENT UNIT. Tous droits réservés.</p>
-        </div>
-    </footer>
 
-    <script>
-        const themeToggle = document.getElementById('theme-toggle');
-        const html = document.documentElement;
+    </div>
 
-        // Charger le mode préféré au démarrage
-        const savedTheme = localStorage.getItem('theme') || 'light';
-        html.setAttribute('data-theme', savedTheme);
+    <div class="footer-bottom">
 
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = html.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            html.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-        });
-        const cursor = document.querySelector('.cursor-follower');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
-            });
+        <span>© 2026 EXCELLENT UNIT</span>
 
-        const stats = document.querySelectorAll('.stat-number');
+        <span>Designed beyond imagination.</span>
 
-        const animateStats = () => {
-            stats.forEach(stat => {
-                const updateCount = () => {
-                    const target = +stat.getAttribute('data-target');
-                    const count = +stat.innerText;
-                    const speed = target / 100; // Ajuste la vitesse ici
+    </div>
 
-                    if (count < target) {
-                        stat.innerText = Math.ceil(count + speed);
-                        setTimeout(updateCount, 20);
-                    } else {
-                        stat.innerText = target;
-                    }
-                };
-                updateCount();
-            });
-        };
+</footer>
 
-        // On lance l'animation quand la section devient visible
-        const statsSection = document.querySelector('.stats-section');
-        const statsObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                animateStats();
-                statsObserver.unobserve(statsSection);
-            }
-        }, { threshold: 0.5 });
+<script>
 
-        statsObserver.observe(statsSection);    
+const cursor = document.querySelector('.cursor');
 
-                // Animation au scroll (Reveal)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
+window.addEventListener('mousemove', (e)=>{
 
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-    </script>
+    cursor.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+});
+
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+            entry.target.classList.add('active');
+        }
+    });
+
+},{threshold:.1});
+
+reveals.forEach(el=> observer.observe(el));
+
+const cards = document.querySelectorAll('.world-card');
+
+cards.forEach(card=>{
+
+    card.addEventListener('mousemove', (e)=>{
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY = (x - rect.width / 2) / 18;
+        const rotateX = -(y - rect.height / 2) / 18;
+
+        card.style.transform = `
+        perspective(1000px)
+        rotateY(${rotateY}deg)
+        rotateX(${rotateX}deg)
+        translateY(-18px)
+        scale(1.02)`;
+    });
+
+    card.addEventListener('mouseleave', ()=>{
+
+        card.style.transform = `
+        perspective(1000px)
+        rotateY(0deg)
+        rotateX(0deg)
+        translateY(0px)`;
+    });
+});
+
+const html = document.documentElement;
+const toggle = document.getElementById('themeToggle');
+const icon = toggle.querySelector('i');
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+
+html.setAttribute('data-theme', savedTheme);
+
+if(savedTheme === 'light'){
+    icon.className = 'fas fa-sun';
+}else{
+    icon.className = 'fas fa-moon';
+}
+
+toggle.addEventListener('click', ()=>{
+
+    const current = html.getAttribute('data-theme');
+
+    const next = current === 'dark' ? 'light' : 'dark';
+
+    html.setAttribute('data-theme', next);
+
+    localStorage.setItem('theme', next);
+
+    if(next === 'light'){
+        icon.className = 'fas fa-sun';
+    }else{
+        icon.className = 'fas fa-moon';
+    }
+});
+
+</script>
+
 </body>
 </html>
+
