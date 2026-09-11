@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCELLENT UNIT — À Propos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="globals.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: "Times New Roman", Times, serif; 
+            margin: 0; padding: 0;
+            background-color: var(--bg-primary, #0b141a);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        .site-container { max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 1.5rem; box-sizing: border-box; }
+
+        /* NAVBAR */
+        header { 
+            position: fixed; top: 0; left: 0; width: 100%; height: 75px; 
+            background-color: var(--card-bg, #111b21); border-bottom: 1px solid var(--border-color, #222d34); 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 0 5%; z-index: 1000; box-sizing: border-box; 
+        }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; }
+        .logo-container { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-img { height: 40px; width: auto; object-fit: contain; border-radius: 6px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-text .top { font-weight: bold; color: var(--brand-gold, #d4af37); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        .logo-text .bottom { font-weight: bold; color: var(--text-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        .nav-right { display: flex; gap: 0.75rem; align-items: center; }
+        .mobile-menu-btn { display: none; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.4rem 0.6rem; border-radius: 8px; font-size: 1.2rem; }
+        .desktop-actions { display: flex; gap: 0.75rem; align-items: center; }
+
+        .mobile-dropdown {
+            position: fixed; top: 75px; left: 0; width: 100%;
+            background-color: var(--card-bg); border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
+            transform: translateY(-150%); transition: transform 0.3s ease-in-out; z-index: 999;
+        }
+        .mobile-dropdown.active { transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .desktop-actions { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        /* HERO SECTION */
+        .about-hero {
+            padding: 8.5rem 1.5rem 2rem 1.5rem;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(212,175,55,0.05) 0%, transparent 100%);
+        }
+        .badge-pill {
+            display: inline-block;
+            background: var(--bg-secondary, #1f2c34);
+            border: 1px solid var(--border-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--brand-gold);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .about-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+        .about-hero p {
+            font-size: 1.05rem;
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* CONTENT SECTIONS - Sans lignes et très rapprochées (~2mm) */
+        .section-box {
+            padding: 1rem 0;
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .section-title {
+            font-size: 1.35rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--brand-gold);
+            margin-bottom: 0.6rem;
+            letter-spacing: 1px;
+        }
+        .text-block {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+            margin-bottom: 0.6rem;
+        }
+
+        /* MISSION & VISION GRID (2 colonnes fixes) */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 480px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        }
+        .card-item {
+            background-color: var(--card-bg, #111b21);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .card-item h3 {
+            color: var(--brand-gold);
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        /* VALEURS GRID (2 par 2 : 2 colonnes fixes) */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 480px) {
+            .grid-4 { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+        }
+        .value-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .value-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--brand-gold);
+        }
+        .value-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .value-card h4 {
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+            font-weight: bold;
+        }
+        .value-card p {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.35;
+            margin: 0;
+        }
+
+        /* CITATION / MOT DE LA FIN */
+        .quote-section {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            background: rgba(212,175,55,0.03);
+            border-bottom: none;
+            margin-top: 0.5rem;
+        }
+        .quote-box {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .quote-text {
+            font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+            font-style: italic;
+            color: var(--brand-gold);
+            margin-bottom: 0.6rem;
+            line-height: 1.4;
+        }
+        .quote-sub {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--card-bg, #0b141a);
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 0;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        @media (max-width: 768px) {
+            .footer-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+            .footer-col-main {
+                grid-column: span 2;
+                text-align: center !important;
+            }
+        }
+        .footer-col h3 {
+            color: var(--brand-gold);
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.8rem;
+        }
+        .footer-col p { line-height: 1.5; margin-bottom: 0.5rem; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-col ul li a:hover { color: var(--brand-gold); }
+        .footer-col .devise { font-style: italic; color: var(--text-primary); font-weight: bold; margin-top: 0.3rem; }
+        .footer-col-nav { text-align: left; }
+        .footer-col-contact { text-align: right; }
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+            text-align: center;
+        }
+        .footer-badge { 
+            background: var(--bg-secondary); 
+            border: 1px solid var(--border-color); 
+            padding: 0.35rem 1rem; 
+            border-radius: 20px; 
+            font-size: 0.75rem; 
+            color: var(--text-secondary); 
+        }
+        .footer-badge span { color: var(--brand-gold); font-weight: bold; }
+    </style>
+</head>
+<body class="dark">
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo-container">
+                <img src="IMG/logo.png" alt="Logo Excellent Unit" class="logo-img">
+                <div class="logo-text">
+                    <span class="top">Excellent</span>
+                    <span class="bottom">Unit</span>
+                </div>
+            </a>
+            <div class="nav-right">
+                <div class="desktop-actions">
+                    <a href="index.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: bold; margin-right: 1rem;">Accueil</a>
+                    <button onclick="toggleTheme()" style="background: transparent; border: 1px solid var(--border-color); color: var(--brand-gold); padding: 0.4rem 0.6rem; border-radius: 8px;" aria-label="Changer de thème">🌓</button>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU DÉROULANT MOBILE -->
+    <div id="mobile-menu" class="mobile-dropdown">
+        <a href="index.html" style="color: var(--text-primary); text-decoration: none; font-weight: bold; padding: 0.5rem 0;">Accueil</a>
+        <a href="apropos.html" style="color: var(--brand-gold); text-decoration: none; font-weight: bold; padding: 0.5rem 0;">À Propos</a>
+        <button onclick="toggleTheme(); toggleMobileMenu();" style="width: 100%; background: transparent; border: 1px solid var(--border-color); color: var(--brand-gold); padding: 0.75rem; border-radius: 10px; font-weight: bold; text-align: center;">Changer de thème</button>
+    </div>
+
+    <!-- HERO SECTION -->
+    <section class="about-hero">
+        <div class="site-container">
+            <span class="badge-pill">Notre Identité & Histoire</span>
+            <h1>Bâtir un cadre de performance rapide, profond et durable</h1>
+            <p>Découvrez la vision, l'origine et l'engagement d'EXCELLENT UNIT au service du développement, de l'éducation et de l'impact social durable en RDC et en Afrique.</p>
+        </div>
+    </section>
+
+    <!-- ORIGINE & ANCRAGE -->
+    <section class="section-box">
+        <div class="site-container">
+            <h2 class="section-title">Origine & Ancrage</h2>
+            <p class="text-block">
+                Après un impact sur plus d'une décennie et une réussite à succès, <strong>EXCELLENT UNIT</strong> a été pensé en 2021 et officiellement créé sur des plateformes et comme organisation active en <strong>juin 2025 à Goma, en République Démocratique du Congo</strong>.
+            </p>
+            <p class="text-block">
+                Cette initiative répond directement à la crise de l'impact qui sévit dans plusieurs sociétés, où le cri de l'urgence exige un cadre de performance et de résultat rapide, profond et durable par des méthodes accessibles et intemporelles.
+            </p>
+            <p class="text-block">
+                L'organisation se fixe autour de la jeunesse pour constituer des sociétés solides et transformées pour l'innovation, l'accompagnement afin d'un succès total, tout en impactant les tissus socio-économiques locaux par une combinaison de rigueur technique et d'impact communautaire réel.
+            </p>
+        </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="section-box">
+        <div class="site-container">
+            <h2 class="section-title">Raison d'être</h2>
+            <div class="grid-2">
+                <div class="card-item">
+                    <h3>Mission</h3>
+                    <p class="text-block" style="margin: 0;">Concevoir et structurer des projets à fort impact social et technique tout en autonomisant la jeunesse à travers des programmes adaptés.</p>
+                </div>
+                <div class="card-item">
+                    <h3>Vision</h3>
+                    <p class="text-block" style="margin: 0;">Devenir une référence panafricaine et universelle en matière d'innovation sociale et d'excellence opérationnelle, en bâtissant des infrastructures et des initiatives durables qui transforment durablement les communautés en RDC et en Afrique.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALEURS FONDAMENTALES -->
+    <section class="section-box">
+        <div class="site-container">
+            <h2 class="section-title">Nos Valeurs Fondamentales</h2>
+            <div class="grid-4">
+                <div class="value-card">
+                    <span class="value-icon">✨</span>
+                    <h4>L'Excellence</h4>
+                    <p>Grâce à la compréhension et à la créativité, développer des éléments originaux et sur mesure.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🛡️</span>
+                    <h4>L'Intégrité</h4>
+                    <p>Agir avec transparence, honnêteté et sens des responsabilités envers nos partenaires et bénéficiaires.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌱</span>
+                    <h4>L'Impact Social</h4>
+                    <p>Mettre l'humain au centre de sa vie et de ses projets pour générer des changements tangibles, mesurables et durables.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🚀</span>
+                    <h4>Le Leadership</h4>
+                    <p>Inspirer, guider et préparer la nouvelle génération à prendre son avenir en mains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOT DE LA FIN / CITATION -->
+    <section class="quote-section">
+        <div class="site-container">
+            <div class="quote-box">
+                <p class="quote-text">« La destinée est la clé de la perfection : chaque opportunité est un succès. »</p>
+                <p class="quote-sub">Tout se prépare. Et toute destinée veut être montée pièce par pièce.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col footer-col-main">
+                <h3>EXCELLENT UNIT</h3>
+                <p>« Développement, éducation & impact social durable. »</p>
+                <p class="devise">« Votre Partenaire »</p>
+            </div>
+            <div class="footer-col footer-col-nav">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="apropos.html">À Propos</a></li>
+                    <li><a href="#programmes">Programmes</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-col-contact">
+                <h3>Contact officiel</h3>
+                <p>📍 Goma, Nord-Kivu, RDC</p>
+                <p>📧 excellentunit@gmail.com</p>
+                <p>📧 davidmathec@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-badge">Membres enregistrés : <span id="users-count">...</span></div>
+            <p style="margin: 0; font-size: 0.8rem; color: var(--text-secondary);">© 2026 EXCELLENT UNIT. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+            localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+        }
+        async function fetchUsersCount() {
+            try {
+                const res = await fetch('/api/users/count');
+                const data = await res.json();
+                document.getElementById('users-count').textContent = data.count ?? 0;
+            } catch (e) {
+                document.getElementById('users-count').textContent = "0";
+            }
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.remove('dark');
+                document.body.classList.add('light');
+            }
+            fetchUsersCount();
+        });
+    </script>
+</body>
+</html>
