@@ -62,9 +62,9 @@
             width: 100%;
         }
 
-        /* LOGO ENCORE PLUS GRAND (ENCORE TRIPLÉ) */
+        /* LOGO GÉANT LIBRE */
         .splash-logo-free {
-            width: 450px; /* Taille maximale imposante */
+            width: 450px;
             max-width: 85vw;
             height: auto;
             object-fit: contain;
@@ -72,15 +72,15 @@
             filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
         }
 
-        /* TITRE "EXCELLENT UNIT" DIMINUÉ ET FORCÉ SUR UNE LIGNE EN RESPONSIVE */
+        /* TITRE "EXCELLENT UNIT" SUR UNE SEULE LIGNE */
         .splash-title {
-            font-size: clamp(1.4rem, 4vw, 2.2rem); /* S'adapte dynamiquement pour tenir sur une seule ligne */
+            font-size: clamp(1.4rem, 4vw, 2.2rem);
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 2rem;
             color: var(--brand-gold, #d4af37);
-            white-space: nowrap; /* Empêche le retour à la ligne forcé */
+            white-space: nowrap;
         }
 
         /* BOUTON D'ENTRÉE DISCRET */
@@ -125,17 +125,16 @@
         }
 
         /* ==========================================
-           2. NAVBAR CACHÉE QUI APPARAÎT AU DÉFILEMENT
+           2. NAVBAR PROpre SANS LE BADGE MEMBRES
         ========================================== */
         header { 
             position: fixed; top: -100px; left: 0; width: 100%; height: 75px; 
             background-color: var(--card-bg); border-bottom: 1px solid var(--border-color); 
             display: flex; align-items: center; justify-content: space-between; 
             padding: 0 5%; z-index: 1000; box-sizing: border-box; 
-            transition: top 0.3s ease-in-out; /* Effet fluide d'apparition */
+            transition: top 0.3s ease-in-out;
         }
 
-        /* Classe ajoutée par JS dès qu'on scroll */
         header.visible {
             top: 0;
         }
@@ -150,10 +149,6 @@
         .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
         .logo-text .top { font-weight: bold; color: var(--brand-gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
         .logo-text .bottom { font-weight: bold; color: var(--text-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
-
-        .nav-center { display: flex; align-items: center; }
-        .badge { background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
-        .badge span { color: var(--brand-gold); font-weight: bold; }
 
         .nav-right { display: flex; gap: 0.75rem; align-items: center; }
         
@@ -178,7 +173,7 @@
         
         /* CONTENU DE LA PAGE PRINCIPALE */
         .main-content-wrapper {
-            min-height: 100vh;
+            min-height: 80vh;
         }
 
         .hero { 
@@ -188,6 +183,38 @@
             max-width: 800px;
             margin: 0 auto;
         }
+
+        /* ==========================================
+           3. FOOTER AVEC LE COMPTEUR DE MEMBRES
+        ========================================== */
+        footer {
+            background-color: var(--card-bg, #0b141a);
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 1rem;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-badge { 
+            background: var(--bg-secondary); 
+            border: 1px solid var(--border-color); 
+            padding: 0.4rem 1rem; 
+            border-radius: 20px; 
+            font-size: 0.8rem; 
+            color: var(--text-secondary); 
+        }
+        .footer-badge span { color: var(--brand-gold); font-weight: bold; }
 
         /* MODALE D'AUTHENTIFICATION */
         .modal-overlay {
@@ -222,19 +249,14 @@
 <body class="dark">
 
     <!-- ==========================================
-       1. ÉCRAN D'ACCUEIL (LOGO + TITRE SUR UNE LIGNE + BOUTON)
+       1. ÉCRAN D'ACCUEIL (IMMERSIF)
     ========================================== -->
     <section id="splash-hero" class="splash-container">
         <div class="splash-overlay"></div>
         
         <div class="splash-content">
-            <!-- Logo géant libre -->
             <img src="IMG/logo.png" alt="Logo Excellent Unit" class="splash-logo-free">
-
-            <!-- Titre compact sur une seule ligne -->
             <h1 class="splash-title">EXCELLENT UNIT</h1>
-
-            <!-- Bouton d'entrée discret -->
             <a href="#main-content" class="btn-enter">Entrer dans la plateforme</a>
         </div>
 
@@ -243,7 +265,9 @@
         </div>
     </section>
 
-    <!-- NAVBAR QUI APPARAÎT AU SCROLL -->
+    <!-- ==========================================
+       2. NAVBAR PROPRE (SANS LE BADGE MEMBRES)
+    ========================================== -->
     <header id="main-header">
         <div class="header-inner">
             <a href="#splash-hero" class="logo-container">
@@ -254,11 +278,7 @@
                 </div>
             </a>
 
-            <div class="nav-center">
-                <div class="badge">Membres <span id="users-count">...</span></div>
-            </div>
-
-            <!-- Actions Droite -->
+            <!-- Actions Droite (Connexion / Inscription / Menu) -->
             <div class="nav-right" id="nav-actions-container">
                 <button id="btn-login-nav" onclick="openModal('login')" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.4rem 0.9rem; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">Connexion</button>
                 
@@ -281,7 +301,7 @@
     </div>
 
     <!-- ==========================================
-       2. CONTENU PRINCIPAL DE LA PAGE (INDEX)
+       3. CONTENU PRINCIPAL DE LA PAGE
     ========================================== -->
     <div id="main-content" class="main-content-wrapper">
         <div class="site-container">
@@ -291,6 +311,16 @@
             </section>
         </div>
     </div>
+
+    <!-- ==========================================
+       4. FOOTER AVEC COMPTEUR DE MEMBRES DÉPLACÉ
+    ========================================== -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-badge">Membres enregistrés : <span id="users-count">...</span></div>
+            <p style="margin: 0; font-size: 0.8rem; color: var(--text-secondary);">© 2026 Excellent Unit. Tous droits réservés.</p>
+        </div>
+    </footer>
 
     <!-- MODALE D'AUTHENTIFICATION -->
     <div id="auth-modal" class="modal-overlay" onclick="closeModalOutside(event)">
@@ -352,7 +382,6 @@
     <script>
         let currentMode = 'login';
 
-        // GESTION DE L'APPARITION DE LA NAVBAR AU SCROLL
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
             if (window.scrollY > 80) {
