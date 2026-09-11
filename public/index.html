@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCELLENT UNIT — Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="globals.css">
+    <style>
+        /* POLICE ET BASE */
+        html {
+            scroll-behavior: smooth;
+        }
+        body { 
+            font-family: "Times New Roman", Times, serif; 
+            margin: 0; 
+            padding: 0;
+            background-color: var(--bg-primary, #0b141a);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        /* CONTENEUR CENTRALISÉ GLOBAL */
+        .site-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ==========================================
+           1. ÉCRAN D'ACCUEIL IMMERSIF (SANS NAVBAR)
+        ========================================== */
+        .splash-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('IMG/img-acceuil/jpchd.veraxen.jpeg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .splash-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+
+        .splash-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* LOGO ENCORE PLUS GRAND (ENCORE TRIPLÉ) */
+        .splash-logo-free {
+            width: 450px; /* Taille maximale imposante */
+            max-width: 85vw;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+        }
+
+        /* TITRE "EXCELLENT UNIT" DIMINUÉ ET FORCÉ SUR UNE LIGNE EN RESPONSIVE */
+        .splash-title {
+            font-size: clamp(1.4rem, 4vw, 2.2rem); /* S'adapte dynamiquement pour tenir sur une seule ligne */
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            color: var(--brand-gold, #d4af37);
+            white-space: nowrap; /* Empêche le retour à la ligne forcé */
+        }
+
+        /* BOUTON D'ENTRÉE DISCRET */
+        .btn-enter {
+            display: inline-block;
+            padding: 0.5rem 1.4rem;
+            border: 1px solid var(--brand-gold, #d4af37);
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.65rem;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: rgba(212, 175, 55, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-enter:hover {
+            background: var(--brand-gold, #d4af37);
+            color: #0b141a;
+            transform: translateY(-2px);
+        }
+
+        .scroll-down-hint {
+            position: absolute;
+            bottom: 20px;
+            z-index: 2;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            color: #fff;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-6px); }
+            60% { transform: translateY(-3px); }
+        }
+
+        /* ==========================================
+           2. NAVBAR CACHÉE QUI APPARAÎT AU DÉFILEMENT
+        ========================================== */
+        header { 
+            position: fixed; top: -100px; left: 0; width: 100%; height: 75px; 
+            background-color: var(--card-bg); border-bottom: 1px solid var(--border-color); 
+            display: flex; align-items: center; justify-content: space-between; 
+            padding: 0 5%; z-index: 1000; box-sizing: border-box; 
+            transition: top 0.3s ease-in-out; /* Effet fluide d'apparition */
+        }
+
+        /* Classe ajoutée par JS dès qu'on scroll */
+        header.visible {
+            top: 0;
+        }
+        
+        .header-inner {
+            display: flex; align-items: center; justify-content: space-between;
+            width: 100%; max-width: 1200px; margin: 0 auto;
+        }
+
+        .logo-container { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
+        .logo-img { height: 40px; width: auto; object-fit: contain; border-radius: 6px; }
+        .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+        .logo-text .top { font-weight: bold; color: var(--brand-gold); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+        .logo-text .bottom { font-weight: bold; color: var(--text-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
+
+        .nav-center { display: flex; align-items: center; }
+        .badge { background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 0.3rem 0.7rem; border-radius: 20px; font-size: 0.75rem; color: var(--text-secondary); white-space: nowrap; }
+        .badge span { color: var(--brand-gold); font-weight: bold; }
+
+        .nav-right { display: flex; gap: 0.75rem; align-items: center; }
+        
+        .mobile-menu-btn { display: none; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.4rem 0.6rem; border-radius: 8px; font-size: 1.2rem; }
+        .desktop-actions { display: flex; gap: 0.75rem; align-items: center; }
+
+        /* MENU DÉROULANT MOBILE */
+        .mobile-dropdown {
+            position: fixed; top: 75px; left: 0; width: 100%;
+            background-color: var(--card-bg); border-bottom: 1px solid var(--border-color);
+            padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
+            transform: translateY(-150%); transition: transform 0.3s ease-in-out; z-index: 999;
+        }
+        .mobile-dropdown.active { transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .desktop-actions { display: none; }
+            .mobile-menu-btn { display: block; }
+        }
+
+        button { cursor: pointer; }
+        
+        /* CONTENU DE LA PAGE PRINCIPALE */
+        .main-content-wrapper {
+            min-height: 100vh;
+        }
+
+        .hero { 
+            text-align: center; 
+            padding: 8rem 1rem 6rem 1rem; 
+            color: var(--text-primary); 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* MODALE D'AUTHENTIFICATION */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(2, 6, 23, 0.8); backdrop-filter: blur(10px);
+            display: flex; align-items: center; justify-content: center;
+            z-index: 2000; opacity: 0; pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .modal-overlay.active { opacity: 1; pointer-events: auto; }
+        
+        .modal-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1.5rem;
+            padding: 2.2rem; width: 100%; max-width: 420px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            color: var(--text-primary); position: relative;
+            transform: scale(0.95) translateY(10px); transition: transform 0.3s ease;
+        }
+        .modal-overlay.active .modal-card { transform: scale(1) translateY(0); }
+
+        .modal-card input {
+            width: 100%; padding: 0.75rem 1rem; border-radius: 10px;
+            background-color: var(--bg-secondary); border: 1px solid var(--border-color);
+            color: var(--text-primary); outline: none; font-size: 0.85rem;
+        }
+        .modal-card input:focus { border-color: var(--brand-gold); }
+        .modal-card label { color: var(--text-secondary); font-size: 0.8rem; font-weight: bold; margin-bottom: 0.3rem; display: block; }
+    </style>
+</head>
+<body class="dark">
+
+    <!-- ==========================================
+       1. ÉCRAN D'ACCUEIL (LOGO + TITRE SUR UNE LIGNE + BOUTON)
+    ========================================== -->
+    <section id="splash-hero" class="splash-container">
+        <div class="splash-overlay"></div>
+        
+        <div class="splash-content">
+            <!-- Logo géant libre -->
+            <img src="IMG/logo.png" alt="Logo Excellent Unit" class="splash-logo-free">
+
+            <!-- Titre compact sur une seule ligne -->
+            <h1 class="splash-title">EXCELLENT UNIT</h1>
+
+            <!-- Bouton d'entrée discret -->
+            <a href="#main-content" class="btn-enter">Entrer dans la plateforme</a>
+        </div>
+
+        <div class="scroll-down-hint">
+            <span>Défiler vers le bas</span>
+        </div>
+    </section>
+
+    <!-- NAVBAR QUI APPARAÎT AU SCROLL -->
+    <header id="main-header">
+        <div class="header-inner">
+            <a href="#splash-hero" class="logo-container">
+                <img src="IMG/logo.png" alt="Logo Excellent Unit" class="logo-img">
+                <div class="logo-text">
+                    <span class="top">Excellent</span>
+                    <span class="bottom">Unit</span>
+                </div>
+            </a>
+
+            <div class="nav-center">
+                <div class="badge">Membres <span id="users-count">...</span></div>
+            </div>
+
+            <!-- Actions Droite -->
+            <div class="nav-right" id="nav-actions-container">
+                <button id="btn-login-nav" onclick="openModal('login')" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.4rem 0.9rem; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">Connexion</button>
+                
+                <div class="desktop-actions" id="desktop-actions-group">
+                    <button onclick="openModal('register')" style="background: var(--brand-gold); color: #0b141a; border: none; padding: 0.4rem 0.9rem; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">Inscription</button>
+                    <button onclick="toggleTheme()" style="background: transparent; border: 1px solid var(--border-color); color: var(--brand-gold); padding: 0.4rem 0.6rem; border-radius: 8px;" aria-label="Changer de thème">🌓</button>
+                </div>
+
+                <button class="mobile-menu-btn" id="mobile-hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MENU DÉROULANT MOBILE -->
+    <div id="mobile-menu" class="mobile-dropdown">
+        <div id="mobile-auth-links">
+            <button onclick="openModal('register'); toggleMobileMenu();" style="width: 100%; background: var(--brand-gold); color: #0b141a; border: none; padding: 0.75rem; border-radius: 10px; font-weight: bold; text-align: center; margin-bottom: 0.75rem;">Inscription</button>
+        </div>
+        <button onclick="toggleTheme(); toggleMobileMenu();" style="width: 100%; background: transparent; border: 1px solid var(--border-color); color: var(--brand-gold); padding: 0.75rem; border-radius: 10px; font-weight: bold; text-align: center;">Changer de thème (Clair / Sombre)</button>
+    </div>
+
+    <!-- ==========================================
+       2. CONTENU PRINCIPAL DE LA PAGE (INDEX)
+    ========================================== -->
+    <div id="main-content" class="main-content-wrapper">
+        <div class="site-container">
+            <section class="hero">
+                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--brand-gold);">Garantir le sens du long terme</h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6;">Votre partenaire institutionnel et d'impact social basé à Goma, RDC.</p>
+            </section>
+        </div>
+    </div>
+
+    <!-- MODALE D'AUTHENTIFICATION -->
+    <div id="auth-modal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-card">
+            <button onclick="closeModal()" style="position: absolute; top: 1.2rem; right: 1.2rem; background: var(--bg-secondary); border: 1px solid var(--border-color); color: var(--text-secondary); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; cursor: pointer;">✕</button>
+
+            <div style="text-align: center; margin-bottom: 1.5rem;">
+                <span id="modal-subtitle" style="color: var(--brand-gold); font-size: 0.65rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; background: var(--bg-secondary); padding: 0.3rem 0.8rem; border-radius: 20px; border: 1px solid var(--border-color); display: inline-block; margin-bottom: 0.5rem;">ESPACE EXCLUSIF</span>
+                <h2 id="modal-title" style="font-size: 1.5rem; font-weight: bold; text-transform: uppercase; color: var(--text-primary); margin: 0;">Connexion</h2>
+                <p id="modal-desc" style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 0.3rem;">Entrez vos accès pour rejoindre l'aventure.</p>
+            </div>
+
+            <div id="modal-message" style="display: none; margin-bottom: 1rem; font-size: 0.8rem; text-align: center; padding: 0.75rem; border-radius: 8px; border: 1px solid;"></div>
+
+            <form id="auth-form" onsubmit="handleAuthSubmit(event)" style="display: flex; flex-direction: column; gap: 0.9rem;">
+                <div id="name-field-container" style="display: none;">
+                    <label for="name-input">Nom complet</label>
+                    <input id="name-input" type="text" placeholder="Ex: Jean Mukendi" />
+                </div>
+
+                <div>
+                    <label for="email-input">Adresse E-mail</label>
+                    <input id="email-input" type="email" required placeholder="nom@excellentunit.org" />
+                </div>
+
+                <div>
+                    <label for="password-input">Mot de passe</label>
+                    <input id="password-input" type="password" required placeholder="••••••••••••" />
+                </div>
+
+                <button type="submit" id="auth-submit-btn" style="width: 100%; padding: 0.85rem; border-radius: 10px; font-weight: bold; text-transform: uppercase; background: var(--brand-gold); color: #0b141a; border: none; font-size: 0.85rem; margin-top: 0.5rem; transition: opacity 0.2s;">
+                    Se connecter
+                </button>
+            </form>
+
+            <div style="display: flex; align-items: center; margin: 1.2rem 0;">
+                <div style="flex-grow: 1; border-top: 1px solid var(--border-color);"></div>
+                <span style="padding: 0 0.75rem; font-size: 0.65rem; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px;">ou continuer avec</span>
+                <div style="flex-grow: 1; border-top: 1px solid var(--border-color);"></div>
+            </div>
+
+            <div>
+                <a href="/auth/google" style="width: 100%; padding: 0.75rem; border-radius: 10px; border: 1px solid var(--border-color); background-color: var(--bg-secondary); color: var(--text-primary); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 0.75rem; text-decoration: none;">
+                    <svg style="width: 16px; height: 16px;" viewBox="0 0 24 24">
+                        <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/>
+                        <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.19v3.15C3.18 21.32 7.23 24 12 24z"/>
+                        <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.19C.43 8.1 0 9.8 0 12s.43 3.9 1.19 5.42l4.09-3.15z"/>
+                        <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.23 0 3.18 2.68 1.19 6.58l4.09 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/>
+                    </svg>
+                    <span>Google Account</span>
+                </a>
+            </div>
+
+            <div id="modal-switch-footer" style="text-align: center; margin-top: 1.2rem; font-size: 0.8rem; color: var(--text-secondary);"></div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        let currentMode = 'login';
+
+        // GESTION DE L'APPARITION DE LA NAVBAR AU SCROLL
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 80) {
+                header.classList.add('visible');
+            } else {
+                header.classList.remove('visible');
+            }
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('active');
+        }
+
+        function openModal(mode) {
+            currentMode = mode;
+            const modal = document.getElementById('auth-modal');
+            const title = document.getElementById('modal-title');
+            const desc = document.getElementById('modal-desc');
+            const submitBtn = document.getElementById('auth-submit-btn');
+            const nameContainer = document.getElementById('name-field-container');
+            const msgBox = document.getElementById('modal-message');
+            const switchFooter = document.getElementById('modal-switch-footer');
+            
+            msgBox.style.display = 'none';
+
+            if (mode === 'register') {
+                title.textContent = "Inscription";
+                desc.textContent = "Créez votre compte membre dès aujourd'hui.";
+                submitBtn.textContent = "S'inscrire";
+                nameContainer.style.display = 'block';
+                document.getElementById('name-input').setAttribute('required', 'true');
+                switchFooter.innerHTML = `Vous avez déjà un compte ? <span onclick="openModal('login')" style="color: var(--brand-gold); font-weight: bold; cursor: pointer;">Se connecter</span>`;
+            } else {
+                title.textContent = "Connexion";
+                desc.textContent = "Accédez à votre espace sécurisé.";
+                submitBtn.textContent = "Se connecter";
+                nameContainer.style.display = 'none';
+                document.getElementById('name-input').removeAttribute('required');
+                switchFooter.innerHTML = `Voulez-vous vous inscrire ? <span onclick="openModal('register')" style="color: var(--brand-gold); font-weight: bold; cursor: pointer;">Créer un compte</span>`;
+            }
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('auth-modal').classList.remove('active');
+        }
+
+        function closeModalOutside(event) {
+            if (event.target.id === 'auth-modal') closeModal();
+        }
+
+        async function fetchUsersCount() {
+            try {
+                const res = await fetch('/api/users/count');
+                const data = await res.json();
+                document.getElementById('users-count').textContent = data.count ?? 0;
+            } catch (e) {
+                document.getElementById('users-count').textContent = "0";
+            }
+        }
+
+        async function handleAuthSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('email-input').value;
+            const password = document.getElementById('password-input').value;
+            const nameInputVal = document.getElementById('name-input').value;
+            const name = nameInputVal || email.split('@')[0];
+            const submitBtn = document.getElementById('auth-submit-btn');
+            const msgBox = document.getElementById('modal-message');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Patientez...";
+
+            const endpoint = currentMode === 'register' ? '/api/register' : '/api/login';
+            const payload = currentMode === 'register' ? { name, email, password } : { email, password };
+
+            try {
+                const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+
+                if (res.ok) {
+                    msgBox.style.display = 'block';
+                    msgBox.style.color = '#34d399';
+                    msgBox.style.background = 'rgba(52, 211, 153, 0.1)';
+                    msgBox.style.borderColor = 'rgba(52, 211, 153, 0.3)';
+                    msgBox.textContent = data.message || "Succès !";
+
+                    const userNameToStore = data.user?.name || data.name || name;
+                    localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('userName', userNameToStore);
+
+                    if (currentMode === 'register') fetchUsersCount();
+
+                    setTimeout(() => { 
+                        closeModal(); 
+                        checkAuthStatus(); 
+                    }, 1000);
+                } else {
+                    throw new Error(data.error || data.message || "Erreur de connexion.");
+                }
+            } catch (err) {
+                msgBox.style.display = 'block';
+                msgBox.style.color = '#f87171';
+                msgBox.style.background = 'rgba(248, 113, 113, 0.1)';
+                msgBox.style.borderColor = 'rgba(248, 113, 113, 0.3)';
+                msgBox.textContent = err.message;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = currentMode === 'register' ? "S'inscrire" : "Se connecter";
+            }
+        }
+
+        function checkAuthStatus() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            const userName = localStorage.getItem('userName') || 'Membre';
+
+            const loginBtn = document.getElementById('btn-login-nav');
+            const desktopGroup = document.getElementById('desktop-actions-group');
+            const mobileAuthLinks = document.getElementById('mobile-auth-links');
+
+            if (isLoggedIn === 'true') {
+                if (loginBtn) loginBtn.style.display = 'none';
+                if (desktopGroup) {
+                    desktopGroup.innerHTML = `
+                        <span style="color: var(--brand-gold); font-size: 0.85rem; font-weight: bold;">👋 ${userName}</span>
+                        <button onclick="logout()" style="background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.3rem 0.7rem; border-radius: 8px; font-size: 0.75rem; font-weight: bold;">Déconnexion</button>
+                        <button onclick="toggleTheme()" style="background: transparent; border: 1px solid var(--border-color); color: var(--brand-gold); padding: 0.4rem 0.6rem; border-radius: 8px;" aria-label="Changer de thème">🌓</button>
+                    `;
+                }
+                if (mobileAuthLinks) {
+                    mobileAuthLinks.innerHTML = `
+                        <div style="text-align: center; color: var(--brand-gold); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.75rem;">👋 ${userName}</div>
+                        <button onclick="logout()" style="width: 100%; background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.75rem; border-radius: 10px; font-weight: bold; text-align: center; margin-bottom: 0.75rem;">Déconnexion</button>
+                    `;
+                }
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('isLoggedIn');
+            localStorage.removeItem('userName');
+            location.reload();
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+            localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('login') === 'success') {
+                const googleName = urlParams.get('name') || 'Membre Google';
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userName', googleName);
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            if (localStorage.getItem('theme') === 'light') {
+                document.body.classList.remove('dark');
+                document.body.classList.add('light');
+            }
+            fetchUsersCount();
+            checkAuthStatus();
+        });
+    </script>
+</body>
+</html>

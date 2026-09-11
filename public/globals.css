@@ -1,0 +1,41 @@
+/* Import des variables de couleur */
+@import url('./variables.css');
+
+/* ==========================================
+   STYLES GLOBAUX — EXCELLENT UNIT
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: "Times New Roman", Times, serif;
+  width: 100%;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Classes utilitaires dynamiques */
+.bg-primary { background-color: var(--bg-primary); }
+.bg-secondary { background-color: var(--bg-secondary); }
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-gold { color: var(--brand-gold); }
+.bg-gold { background-color: var(--brand-gold); }
+.border-gold { border-color: var(--brand-gold); }
+
+.text-whatsapp { color: var(--whatsapp-color); }
+.bg-whatsapp { background-color: var(--whatsapp-color); }
+.border-whatsapp { border-color: var(--whatsapp-color); }
+
+section {
+  display: block;
+  margin: 0 !important;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}

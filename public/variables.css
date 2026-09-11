@@ -1,0 +1,28 @@
+/* ==========================================
+   VARIABLES CSS — EXCELLENT UNIT
+   Thème Principal : Mode Sombre (Bleu WhatsApp / Jaune Doré)
+   ========================================== */
+
+:root {
+  /* MODE SOMBRE PAR DÉFAUT (Fond bleu-noir style WhatsApp, Jaune doré, Vert WhatsApp) */
+  --bg-primary: #0b141a;   /* Fond sombre bleuté WhatsApp */
+  --bg-secondary: #111b21; /* Fond secondaire bleuté WhatsApp */
+  --text-primary: #e9edef; /* Texte clair WhatsApp */
+  --text-secondary: #8696a0; /* Texte secondaire gris/bleu */
+  --brand-gold: #facc15;   /* Vrai jaune doré lumineux */
+  --whatsapp-color: #25d366; /* Vert WhatsApp */
+  --border-color: #222d34;
+  --card-bg: #1f2c34;      /* Fond de carte bleuté sombre */
+}
+
+/* MODE CLAIR (Optionnel, activé via le bouton si l'utilisateur le souhaite) */
+body.light, [data-theme="light"] {
+  --bg-primary: #FFFFFF;   /* Blanc pur */
+  --bg-secondary: #F4F1EA; /* Brun très clair / Grège */
+  --text-primary: #3B2F2F; /* Brun neutre profond */
+  --text-secondary: #705D56; /* Brun neutre secondaire */
+  --brand-gold: #d97706;   /* Jaune/Brun doré pour mode clair */
+  --whatsapp-color: #25d366; 
+  --border-color: #E6E0D5;
+  --card-bg: #FFFFFF;
+}
