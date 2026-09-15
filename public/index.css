@@ -1,4 +1,6 @@
-/* POLICE ET BASE */
+/* ==========================================
+   POLICE ET BASE
+========================================== */
 html {
     scroll-behavior: smooth;
 }
@@ -12,10 +14,12 @@ body {
 }
 
 /* CONTENEUR CENTRALISÉ GLOBAL */
-.site-container {
+.site-container,
+.main-content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
 /* ESPACEMENT STRICT DE 1 MILLIMÈTRE ENTRE LES SECTIONS + PADDING BOTTOM DE 0,5MM */
@@ -23,6 +27,7 @@ body {
     margin-bottom: 1mm;
     padding-bottom: 0.5mm !important;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /* ==========================================
@@ -59,6 +64,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -211,9 +217,9 @@ button { cursor: pointer; }
     3. STYLES SECTION 2 : HERO & BANNIÈRE D'IMPACT
 ========================================== */
 .hero-main-wrapper {
-    padding: 3rem 1rem 1rem 1rem; /* Remonté vers le haut (padding top réduit) */
+    padding: 3rem 1rem 1rem 1rem;
     text-align: center;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
 }
@@ -233,7 +239,7 @@ button { cursor: pointer; }
 }
 
 .hero-title {
-    font-size: clamp(1.8rem, 4.5vw, 3.2rem); /* Légèrement diminué mais gardant de la prestance */
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -243,7 +249,7 @@ button { cursor: pointer; }
 }
 
 .hero-description {
-    font-size: clamp(0.95rem, 1.4vw, 1.15rem); /* Taille de texte légèrement diminuée */
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
     line-height: 1.5;
     color: var(--text-secondary);
     max-width: 850px;
@@ -291,22 +297,27 @@ button { cursor: pointer; }
 }
 .btn-secondary-custom:hover { background-color: rgba(212, 175, 55, 0.1); }
 
-/* BANNIÈRE D'IMPACT INTERMÉDIAIRE */
+/* BANNIÈRE D'IMPACT INTERMÉDIAIRE (PARFAITEMENT CENTRÉE) */
 .impact-banner-container {
     max-width: 1200px;
     margin: 0 auto 1mm auto;
-    padding: 0 1cm;
+    padding: 0;
     box-sizing: border-box;
+    display: flex;
+    justify-content: center;
 }
 
 .impact-banner-box {
-    background-color: var(--card-bg, #111b21);
-    border: 1px solid var(--border-color);
+    background-color: var(--brand-gold, #d4af37);
+    border: none;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .impact-banner-header {
@@ -315,38 +326,37 @@ button { cursor: pointer; }
     padding: 1.5rem 2rem;
     text-align: center;
     font-weight: bold;
-    font-size: clamp(0.9rem, 2vw, 1.3rem); /* Légèrement ajusté en responsive */
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
     text-transform: uppercase;
     letter-spacing: 1px;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .impact-banner-body {
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-}
-
-.side-yellow-stripe {
-    width: 1cm;
-    background-color: var(--brand-gold, #d4af37);
-    flex-shrink: 0;
+    background-color: #0b141a;
+    border: none;
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .impact-image-wrapper {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
-    background-color: var(--brand-gold, #d4af37);
+    width: 100%;
+    background-color: transparent;
+    border: none;
     box-sizing: border-box;
 }
 
 .impact-img-736 {
     width: 540px;
-    max-width: 100%; /* Rendu responsive pour les petits écrans */
+    max-width: 100%;
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -364,12 +374,13 @@ button { cursor: pointer; }
     gap: 1rem;
     text-align: center;
     box-sizing: border-box;
+    width: 100%;
 }
 
 .impact-footer-text {
     font-size: 0.9rem;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: lowercase;
     letter-spacing: 0.5px;
     margin: 0;
 }
@@ -405,15 +416,12 @@ button { cursor: pointer; }
     .impact-banner-container {
         padding: 0 2mm;
     }
-    .side-yellow-stripe {
-        width: 4mm;
-    }
     .impact-banner-header, .impact-banner-footer {
         padding: 1rem;
     }
 }
 
-/* --- SECTION PILIERS & PROGRAMMES --- */
+/* --- SECTION PILIERS & PROGRAMMES (CENTRÉE) --- */
 #piliers-section {
     padding: 3rem 1rem 0.5rem 1rem;
     max-width: 1200px;
@@ -452,6 +460,8 @@ button { cursor: pointer; }
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .pilier-card {
@@ -542,49 +552,17 @@ button { cursor: pointer; }
     gap: 0.5rem;
 }
 
-/* RESPONSIVE : Piliers 2 par 2 sur tablettes / écrans intermédiaires, et 1 par 1 sur petits mobiles */
 @media (max-width: 1024px) {
     .piliers-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 à 2 */
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.2rem;
     }
 }
 
 @media (max-width: 600px) {
     .piliers-grid {
-        grid-template-columns: 1fr; /* 1 par 1 sur très petits mobiles si besoin */
+        grid-template-columns: 1fr;
         gap: 1rem;
-    }
-}
-
-@media (max-width: 900px) {
-    .pilier-card {
-        border-radius: 8px;
-        min-height: 340px;
-    }
-
-    .pilier-content {
-        padding: 1rem;
-    }
-
-    .pilier-tag {
-        font-size: 0.65rem;
-        margin-bottom: 0.2rem;
-    }
-
-    .pilier-heading {
-        font-size: 1rem;
-        margin-bottom: 0.4rem;
-    }
-
-    .pilier-desc {
-        font-size: 0.8rem;
-        line-height: 1.35;
-        margin-bottom: 0.8rem;
-    }
-
-    .pilier-link {
-        font-size: 0.7rem;
     }
 }
 
@@ -655,12 +633,8 @@ button { cursor: pointer; }
     box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
 }
 
-.modal-card input::placeholder {
-    color: rgba(255, 255, 255, 0.3);
-}
-
 /* ==========================================
-    5. FOOTER & BAS DE PAGE (COMPACT, GAUCHE / DROITE)
+    5. FOOTER & BAS DE PAGE (CENTRÉ)
 ========================================== */
 footer {
     background-color: var(--card-bg, #0b1218);
@@ -668,20 +642,22 @@ footer {
     padding: 2rem 1rem 1.5rem 1rem;
     margin-top: 3rem;
     color: var(--text-secondary);
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-bottom: 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* Éléments à gauche dans le footer */
 .footer-col-left {
     display: flex;
     flex-direction: column;
@@ -702,7 +678,6 @@ footer {
     line-height: 1.4;
 }
 
-/* Éléments à droite dans le footer (liens de navigation) */
 .footer-col-right {
     display: flex;
     gap: 1.5rem;
@@ -729,12 +704,14 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid rgba(212, 175, 55, 0.15);
     display: flex;
-    justify-content: center; /* Centré en dessous */
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
     font-size: 0.75rem;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footer-badge {
@@ -745,45 +722,4 @@ footer {
     font-size: 0.7rem;
     color: var(--brand-gold, #d4af37);
     font-weight: 600;
-}
-
-/* Responsive Footer Spécifique */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: row; /* Reste potentiellement côte à côte si l'espace le permet, ou bascule proprement */
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 1.5rem;
-    }
-    
-    .footer-col-right {
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 0.6rem;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .footer-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    
-    .footer-col-left {
-        align-items: center;
-    }
-
-    .footer-col-right {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-    }
 }
