@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="variables.css">
     <link rel="stylesheet" href="globals.css">
+    <link rel="stylesheet" href="index.css">
     <style>
         /* POLICE ET BASE */
         html {
@@ -906,7 +907,7 @@
         
         <div class="splash-content">
             <img src="IMG/logo.png" alt="Logo Excellent Unit" class="splash-logo-free">
-            <h1 class="splash-title">EXCELLENT UNIT</h1>
+            <h1 class="splash-title"><span style="color: var(--brand-gold);">EXCELLENT</span> <span style="color: var(--text-primary);">UNIT</span></h1>
             <a href="#main-content" class="btn-enter">Entrer dans la plateforme</a>
         </div>
 
@@ -923,8 +924,8 @@
             <a href="#splash-hero" class="logo-container">
                 <img src="IMG/logo.png" alt="Logo Excellent Unit" class="logo-img">
                 <div class="logo-text">
-                    <span class="top">Excellent</span>
-                    <span class="bottom">Unit</span>
+                    <span class="top" style="color: var(--brand-gold);">Excellent</span>
+                    <span class="bottom" style="color: var(--text-primary);">Unit</span>
                 </div>
             </a>
 
@@ -941,9 +942,9 @@
         </div>
 
         <div class="announcement-bar">
-            <a href="#soutien-partenaires-section">Pourquoi faire un don ?</a>
+            <a href="#soutien-section">Pourquoi faire un don ?</a>
             <span>•</span>
-            <a href="#soutien-partenaires-section">Voir les partenaires</a>
+            <a href="#soutien-section">Voir les partenaires</a>
         </div>
     </header>
 
@@ -959,31 +960,28 @@
     ========================================== -->
     <div id="main-content" class="main-content-wrapper">
 
-        <!-- SECTION 2 : HERO & BANNIÈRE D'IMPACT (Implanté) -->
+        <!-- SECTION 2 : HERO & BANNIÈRE D'IMPACT -->
         <section id="hero-section" class="page-section">
             
-            <!-- PRÉSENTATION PRINCIPALE HERO -->
             <div class="hero-main-wrapper">
                 <div class="hero-badge">Innovation & Impact Social</div>
-                <h1 class="hero-title">« GARANTIR LE SENS DU LONG TERME. »</h1>
+                <h1 class="hero-title" style="background: linear-gradient(135deg, var(--brand-gold) 0%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">« GARANTIR LE SENS DU LONG TERME. »</h1>
                 <p class="hero-description">
                     Établir des systèmes communautaires accessibles, universels, actuels, sur mesure et durables pour répondre aux défis majeurs de notre société.
                 </p>
                 <div class="hero-actions">
                     <a href="#vision-section" class="btn-primary-custom">Découvrir la vision</a>
-                    <a href="#programmes-section" class="btn-secondary-custom">Nos piliers</a>
+                    <a href="#piliers-section" class="btn-secondary-custom">Nos piliers</a>
                 </div>
             </div>
 
-            <!-- BANNIÈRE D'IMPACT INTERMÉDIAIRE (Espacée de 1mm) -->
+            <!-- BANNIÈRE D'IMPACT INTERMÉDIAIRE -->
             <div class="impact-banner-container">
                 <div class="impact-banner-box">
-                    <!-- Titre au-dessus avec fond jaune -->
                     <div class="impact-banner-header">
                         Aidons au développement de notre ville, pays et continent. Unissons-nous pour le développement.
                     </div>
 
-                    <!-- Corps avec image 736x736 encadrée de bandes jaunes de 1cm à gauche et à droite -->
                     <div class="impact-banner-body">
                         <div class="side-yellow-stripe"></div>
                         <div class="impact-image-wrapper">
@@ -993,12 +991,11 @@
                     </div>
 
                     <!-- Pied avec interactivité et compteur dynamique -->
-                    <div class="impact-banner-footer">
-                        <p class="impact-footer-text">Rejoignez le mouvement dès aujourd'hui</p>
-                        <button class="btn-partant" onclick="handlePartantClick()">Je suis partant</button>
-                        <span class="partant-counter-display" id="partant-count-text">Chargement du compteur...</span>
+                    <!-- Pied avec interactivité et compteur dynamique -->
+                    <div class="impact-banner-footer" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <button id="btn-partant-action" class="btn-partant" onclick="handlePartantClick()" style="background: var(--brand-gold); color: #0b141a; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: bold; font-size: 0.9rem; cursor: pointer;">Je suis partant</button>
+                        <span class="partant-counter-display" id="partant-count-text" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">0 soutiens</span>
                     </div>
-                </div>
             </div>
 
         </section>
@@ -1007,7 +1004,7 @@
         <section id="piliers-section" class="page-section">
             <div class="piliers-header">
                 <span class="piliers-badge">UNIVERS & PILIERS</span>
-                <h2 class="piliers-title">Concrétiser vos rêves par une touche sur mesure : De l'excellence à la perfection.</h2>
+                <h2 class="piliers-title" style="background: linear-gradient(135deg, var(--brand-gold) 0%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Concrétiser vos rêves par une touche sur mesure : De l'excellence à la perfection.</h2>
                 <p class="hero-description" style="margin-top: 1rem; font-size: 1.05rem;">Accompagnement personnalisé et institutionnel.</p>
                 <div style="margin-top: 2rem;">
                     <span style="color: var(--brand-gold, #d4af37); font-weight: bold; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Liste complète des programmes</span>
@@ -1015,7 +1012,6 @@
             </div>
 
             <div class="piliers-grid">
-                
                 <!-- Pilier 1 -->
                 <div class="pilier-card">
                     <div class="pilier-img-wrapper">
@@ -1093,7 +1089,6 @@
                         <a href="#recherche" class="pilier-link">En savoir plus →</a>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1102,109 +1097,107 @@
             <span>Vous êtes au bon endroit</span>
         </div>
 
-        <!-- SECTION 4 : VISION & ENGAGEMENT -->
-        <!-- Section : Soutien & Partenariats -->
-    <section id="soutien-section" class="page-section" style="padding: 4rem 1rem; max-width: 1200px; margin: 0 auto;">
-        
-        <!-- En-tête de section -->
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <span class="piliers-badge"> NOTRE VISION & ENGAGEMENT </span>
-            <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: bold; text-transform: uppercase; color: var(--text-primary); margin: 1rem 0 0.5rem 0;">
-                Impacter à 100% 
-            </h2>
-            <p style="color: var(--text-secondary); font-size: 0.95rem;">Chaque projet mené au sein d'EXCELLENT UNIT est conçu pour durer, inspirer et générer un changement mesurable en RDC et à travers l'Afrique. </p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+        <!-- SECTION 4 : VISION & ENGAGEMENT / SOUTIEN -->
+        <section id="soutien-section" class="page-section" style="padding: 4rem 1rem; max-width: 1200px; margin: 0 auto;">
             
-            <!-- Bloc 1 : Mobile Money / Soutien Direct -->
-            <div style="background-color: var(--card-bg, #111b21); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <span style="color: var(--brand-gold); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Contribution Financière</span>
-                    <h3 style="font-size: 1.3rem; font-weight: bold; text-transform: uppercase; margin: 0.5rem 0 1rem 0; color: var(--text-primary);">Soutien Mobile Money</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">
-                        Apportez une contribution directe aux programmes de terrain via nos canaux sécurisés officiels en RDC.
-                    </p>
-                    
-                    <!-- Ligne Airtel -->
-                    <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-                        <div>
-                            <strong style="display: block; font-size: 0.75rem; color: var(--brand-gold);">AIRTEL MONEY</strong>
-                            <span id="airtel-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 977 803 479</span>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <span class="piliers-badge">NOTRE VISION & ENGAGEMENT</span>
+                <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: bold; text-transform: uppercase; margin: 1rem 0 0.5rem 0; background: linear-gradient(135deg, var(--brand-gold) 0%, #ffffff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                    Impacter à 100% 
+                </h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Chaque projet mené au sein de <span style="color: var(--brand-gold);">EXCELLENT</span> <span style="color: var(--text-primary);">UNIT</span> est conçu pour durer, inspirer et générer un changement mesurable en RDC et à travers l'Afrique.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+                
+                <!-- Bloc 1 : Mobile Money / Soutien Direct -->
+                <div style="background-color: var(--card-bg, #111b21); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="color: var(--brand-gold); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">SOUTIEN DIRECT & DONATIONS</span>
+                        <h3 style="font-size: 1.3rem; font-weight: bold; text-transform: uppercase; margin: 0.5rem 0 1rem 0; color: var(--text-primary);">Soutien Mobile Money</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">
+                            Apportez une contribution directe aux programmes de terrain via nos canaux sécurisés officiels en RDC.
+                        </p>
+                        
+                        <!-- Ligne Airtel (Rouge) -->
+                        <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                            <div>
+                                <strong style="display: block; font-size: 0.75rem; color: #ef4444;">AIRTEL MONEY</strong>
+                                <span id="airtel-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 977 803 479</span>
+                            </div>
+                            <button onclick="copyToClipboard('+243977803479', this)" style="background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
                         </div>
-                        <button onclick="copyToClipboard('+243977803479', this)" style="background: transparent; border: 1px solid var(--brand-gold); color: var(--brand-gold); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+
+                        <!-- Ligne Orange (Orange) -->
+                        <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <div>
+                                <strong style="display: block; font-size: 0.75rem; color: #f97316;">ORANGE MONEY</strong>
+                                <span id="orange-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 890 000 000</span>
+                            </div>
+                            <button onclick="copyToClipboard('+243890000000', this)" style="background: transparent; border: 1px solid #f97316; color: #f97316; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+                        </div>
                     </div>
 
-                    <!-- Ligne Orange -->
-                    <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                        <div>
-                            <strong style="display: block; font-size: 0.75rem; color: var(--brand-gold);">ORANGE MONEY</strong>
-                            <span id="orange-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 890 000 000</span>
-                        </div>
-                        <button onclick="copyToClipboard('+243890000000', this)" style="background: transparent; border: 1px solid var(--brand-gold); color: var(--brand-gold); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+                    <!-- Bouton WhatsApp (Vert) -->
+                    <a href="https://wa.me/243977803479?text=Bonjour%20EXCELLENT%20UNIT,%20je%20souhaite%20confirmer%20un%20soutien%20financier." target="_blank" style="background-color: #22c55e; color: #ffffff; border: none; border-radius: 8px; padding: 0.75rem 1.5rem; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; text-align: center; display: block; text-decoration: none; transition: filter 0.3s ease;">
+                        Confirmer sur WhatsApp →
+                    </a>
+                </div>
+
+                <!-- Bloc 2 : Partenariats & Bâtisseurs -->
+                <div style="background-color: var(--card-bg, #111b21); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <span style="color: var(--brand-gold); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Collaboration & Institutions</span>
+                        <h3 style="font-size: 1.3rem; font-weight: bold; text-transform: uppercase; margin: 0.5rem 0 1rem 0; color: var(--text-primary);">Partenariats Stratégiques</h3>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                            Décideurs, leaders et institutions : unissons nos expertises pour concevoir des synergies durables et porter des projets d'envergure à fort impact social.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            <li style="margin-bottom: 0.5rem;">✓ Co-signature de programmes sectoriels</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Alignement institutionnel sur mesure</li>
+                            <li style="margin-bottom: 0.5rem;">✓ Implication des parties prenantes clés</li>
+                        </ul>
                     </div>
+
+                    <button onclick="openRdvModal()" class="btn-primary-custom" style="width: 100%; text-align: center;">
+                        Planifier un RDV Stratégique
+                    </button>
                 </div>
 
-                <a href="https://wa.me/243977803479?text=Bonjour%20EXCELLENT%20UNIT,%20je%20souhaite%20confirmer%20un%20soutien%20financier." target="_blank" class="btn-primary-custom" style="text-align: center; display: block;">
-                    Confirmer sur WhatsApp →
-                </a>
             </div>
+        </section>
 
-            <!-- Bloc 2 : Partenariats & Bâtisseurs -->
-            <div style="background-color: var(--card-bg, #111b21); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <span style="color: var(--brand-gold); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Collaboration & Institutions</span>
-                    <h3 style="font-size: 1.3rem; font-weight: bold; text-transform: uppercase; margin: 0.5rem 0 1rem 0; color: var(--text-primary);">Partenariats Stratégiques</h3>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
-                        Décideurs, leaders et institutions : unissons nos expertises pour concevoir des synergies durables et porter des projets d'envergure à fort impact social.
-                    </p>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; font-size: 0.85rem; color: var(--text-secondary);">
-                        <li style="margin-bottom: 0.5rem;">✓ Co-signature de programmes sectoriels</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Alignement institutionnel sur mesure</li>
-                        <li style="margin-bottom: 0.5rem;">✓ Implication des parties prenantes clés</li>
-                    </ul>
+        <!-- MODAL DE RENDEZ-VOUS STRATÉGIQUE -->
+        <div id="rdv-modal" class="modal-overlay" onclick="closeRdvModalOutside(event)">
+            <div class="modal-card" onclick="event.stopPropagation()">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--brand-gold); font-size: 1.1rem; text-transform: uppercase; margin: 0;">Planifier un RDV Stratégique</h3>
+                    <button onclick="closeRdvModal()" style="background: transparent; border: none; color: var(--text-primary); font-size: 1.2rem; cursor: pointer;">✕</button>
                 </div>
-
-                <button onclick="openRdvModal()" class="btn-primary-custom" style="width: 100%; text-align: center;">
-                    Planifier un RDV Stratégique
-                </button>
+                
+                <form onsubmit="submitRdvForm(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <div>
+                        <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Nom complet</label>
+                        <input type="text" id="rdv-name" required placeholder="Ex. Jean Mukendi">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Adresse e-mail</label>
+                        <input type="email" id="rdv-email" required placeholder="nom@exemple.com">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Organisation / Institution</label>
+                        <input type="text" id="rdv-org" placeholder="Nom de votre structure (facultatif)">
+                    </div>
+                    <div>
+                        <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Objet de la collaboration</label>
+                        <input type="text" id="rdv-subject" required placeholder="Ex. Partenariat Éducation ou Projet WASH">
+                    </div>
+                    <button type="submit" class="btn-primary-custom" style="width: 100%; margin-top: 0.5rem; text-align: center;">
+                        Envoyer la demande de RDV
+                    </button>
+                </form>
             </div>
-
         </div>
-    </section>
-
-    
-    <!-- MODAL DE RENDEZ-VOUS STRATÉGIQUE -->
-    <div id="rdv-modal" class="modal-overlay" onclick="closeRdvModalOutside(event)">
-        <div class="modal-card" onclick="event.stopPropagation()">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-                <h3 style="color: var(--brand-gold); font-size: 1.1rem; text-transform: uppercase; margin: 0;">Planifier un RDV Stratégique</h3>
-                <button onclick="closeRdvModal()" style="background: transparent; border: none; color: var(--text-primary); font-size: 1.2rem; cursor: pointer;">✕</button>
-            </div>
-            
-            <form onsubmit="submitRdvForm(event)" style="display: flex; flex-direction: column; gap: 1rem;">
-                <div>
-                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Nom complet</label>
-                    <input type="text" id="rdv-name" required placeholder="Ex. Jean Mukendi">
-                </div>
-                <div>
-                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Adresse e-mail</label>
-                    <input type="email" id="rdv-email" required placeholder="nom@exemple.com">
-                </div>
-                <div>
-                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Organisation / Institution</label>
-                    <input type="text" id="rdv-org" placeholder="Nom de votre structure (facultatif)">
-                </div>
-                <div>
-                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Objet de la collaboration</label>
-                    <input type="text" id="rdv-subject" required placeholder="Ex. Partenariat Éducation ou Projet WASH">
-                </div>
-                <button type="submit" class="btn-primary-custom" style="width: 100%; margin-top: 0.5rem; text-align: center;">
-                    Envoyer la demande de RDV
-                </button>
-            </form>
-        </div>
-    </div>
 
     </div>
 
@@ -1214,7 +1207,7 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col footer-col-main">
-                <h3>EXCELLENT UNIT</h3>
+                <h3><span style="color: var(--brand-gold);">EXCELLENT</span> <span style="color: var(--text-primary);">UNIT</span></h3>
                 <p>« Développement, éducation & impact social durable. »</p>
                 <p class="devise">« Votre Partenaire »</p>
             </div>
@@ -1224,8 +1217,8 @@
                 <ul>
                     <li><a href="#splash-hero">Accueil</a></li>
                     <li><a href="apropos.html">À Propos</a></li>
-                    <li><a href="#programmes-section">Programmes</a></li>
-                    <li><a href="#soutien-partenaires-section">Contact</a></li>
+                    <li><a href="#piliers-section">Programmes</a></li>
+                    <li><a href="#soutien-section">Contact</a></li>
                 </ul>
             </div>
 
@@ -1239,7 +1232,7 @@
 
         <div class="footer-bottom">
             <div class="footer-badge">Membres enregistrés : <span id="users-count">...</span></div>
-            <p style="margin: 0; font-size: 0.8rem; color: var(--text-secondary);">© 2026 EXCELLENT UNIT. Tous droits réservés.</p>
+            <p style="margin: 0; font-size: 0.8rem; color: var(--text-secondary);">© 2026 <span style="color: var(--brand-gold);">EXCELLENT</span> UNIT. Tous droits réservés.</p>
         </div>
     </footer>
 
@@ -1299,273 +1292,8 @@
         </div>
     </div>
 
+
     <!-- SCRIPTS -->
-    <script>
-        let currentMode = 'login';
-
-        // Gestion de l'affichage de l'en-tête au scroll
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 80) {
-                header.classList.add('visible');
-            } else {
-                header.classList.remove('visible');
-            }
-        });
-
-        function toggleMobileMenu() {
-            document.getElementById('mobile-menu').classList.toggle('active');
-        }
-
-        function openModal(mode) {
-            currentMode = mode;
-            const modal = document.getElementById('auth-modal');
-            const title = document.getElementById('modal-title');
-            const desc = document.getElementById('modal-desc');
-            const submitBtn = document.getElementById('auth-submit-btn');
-            const nameContainer = document.getElementById('name-field-container');
-            const msgBox = document.getElementById('modal-message');
-            const switchFooter = document.getElementById('modal-switch-footer');
-            
-            msgBox.style.display = 'none';
-
-            if (mode === 'register') {
-                title.textContent = "Inscription";
-                desc.textContent = "Créez votre compte membre dès aujourd'hui.";
-                submitBtn.textContent = "S'inscrire";
-                nameContainer.style.display = 'block';
-                document.getElementById('name-input').setAttribute('required', 'true');
-                switchFooter.innerHTML = `Vous avez déjà un compte ? <span onclick="openModal('login')" style="color: var(--brand-gold); font-weight: bold; cursor: pointer;">Se connecter</span>`;
-            } else {
-                title.textContent = "Connexion";
-                desc.textContent = "Accédez à votre espace sécurisé.";
-                submitBtn.textContent = "Se connecter";
-                nameContainer.style.display = 'none';
-                document.getElementById('name-input').removeAttribute('required');
-                switchFooter.innerHTML = `Voulez-vous vous inscrire ? <span onclick="openModal('register')" style="color: var(--brand-gold); font-weight: bold; cursor: pointer;">Créer un compte</span>`;
-            }
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('auth-modal').classList.remove('active');
-        }
-
-        function closeModalOutside(event) {
-            if (event.target.id === 'auth-modal') closeModal();
-        }
-
-        async function fetchUsersCount() {
-            try {
-                const res = await fetch('/api/users/count');
-                const data = await res.json();
-                document.getElementById('users-count').textContent = data.count ?? 0;
-            } catch (e) {
-                document.getElementById('users-count').textContent = "0";
-            }
-        }
-
-        // Gestion du compteur interactif pour "Je suis partant"
-        async function fetchPartantCount() {
-            try {
-                const res = await fetch('/api/partant/count');
-                const data = await res.json();
-                document.getElementById('partant-count-text').textContent = `${data.count ?? 0} personnes ont déjà dit "Je suis partant"`;
-            } catch (e) {
-                document.getElementById('partant-count-text').textContent = "Déjà plus de 120+ soutiens enregistrés";
-            }
-        }
-
-        async function handlePartantClick() {
-            try {
-                const res = await fetch('/api/partant', { method: 'POST' });
-                const data = await res.json();
-                if (res.ok) {
-                    alert(data.message || "Merci pour votre engagement !");
-                    fetchPartantCount();
-                } else {
-                    throw new Error(data.error || "Action déjà enregistrée.");
-                }
-            } catch (err) {
-                alert("Merci ! Votre élan de solidarité a bien été pris en compte.");
-            }
-        }
-
-        async function handleAuthSubmit(event) {
-            event.preventDefault();
-            const email = document.getElementById('email-input').value;
-            const password = document.getElementById('password-input').value;
-            const nameInputVal = document.getElementById('name-input').value;
-            const name = nameInputVal || email.split('@')[0];
-            const submitBtn = document.getElementById('auth-submit-btn');
-            const msgBox = document.getElementById('modal-message');
-
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Patientez...";
-
-            const endpoint = currentMode === 'register' ? '/api/register' : '/api/login';
-            const payload = currentMode === 'register' ? { name, email, password } : { email, password };
-
-            try {
-                const res = await fetch(endpoint, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
-                const data = await res.json();
-
-                if (res.ok) {
-                    msgBox.style.display = 'block';
-                    msgBox.style.color = '#34d399';
-                    msgBox.style.background = 'rgba(52, 211, 153, 0.1)';
-                    msgBox.style.borderColor = 'rgba(52, 211, 153, 0.3)';
-                    msgBox.textContent = data.message || "Succès !";
-
-                    const userNameToStore = data.user?.name || data.name || name;
-                    localStorage.setItem('isLoggedIn', 'true');
-                    localStorage.setItem('userName', userNameToStore);
-
-                    if (currentMode === 'register') fetchUsersCount();
-
-                    setTimeout(() => { 
-                        closeModal(); 
-                        checkAuthStatus(); 
-                    }, 1000);
-                } else {
-                    throw new Error(data.error || data.message || "Erreur de connexion.");
-                }
-            } catch (err) {
-                msgBox.style.display = 'block';
-                msgBox.style.color = '#f87171';
-                msgBox.style.background = 'rgba(248, 113, 113, 0.1)';
-                msgBox.style.borderColor = 'rgba(248, 113, 113, 0.3)';
-                msgBox.textContent = err.message;
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = currentMode === 'register' ? "S'inscrire" : "Se connecter";
-            }
-        }
-
-        function checkAuthStatus() {
-            const isLoggedIn = localStorage.getItem('isLoggedIn');
-            const userName = localStorage.getItem('userName') || 'Membre';
-
-            const loginBtn = document.getElementById('btn-login-nav');
-            const desktopGroup = document.getElementById('desktop-actions-group');
-            const mobileAuthLinks = document.getElementById('mobile-auth-links');
-
-            if (isLoggedIn === 'true') {
-                if (loginBtn) loginBtn.style.display = 'none';
-                if (desktopGroup) {
-                    desktopGroup.innerHTML = `
-                        <span style="color: var(--brand-gold); font-size: 0.85rem; font-weight: bold;">👋 ${userName}</span>
-                        <button onclick="logout()" style="background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.3rem 0.7rem; border-radius: 8px; font-size: 0.75rem; font-weight: bold;">Déconnexion</button>
-                        <button onclick="toggleTheme()" style="background: transparent; border: 1px solid var(--border-color); color: var(--brand-gold); padding: 0.4rem 0.6rem; border-radius: 8px;" aria-label="Changer de thème">🌓</button>
-                    `;
-                }
-                if (mobileAuthLinks) {
-                    mobileAuthLinks.innerHTML = `
-                        <div style="text-align: center; color: var(--brand-gold); font-size: 0.9rem; font-weight: bold; margin-bottom: 0.75rem;">👋 ${userName}</div>
-                        <button onclick="logout()" style="width: 100%; background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.75rem; border-radius: 10px; font-weight: bold; text-align: center; margin-bottom: 0.75rem;">Déconnexion</button>
-                    `;
-                }
-            }
-        }
-
-        function logout() {
-            localStorage.removeItem('isLoggedIn');
-            localStorage.removeItem('userName');
-            location.reload();
-        }
-
-        function toggleTheme() {
-            const body = document.body;
-            body.classList.toggle('dark');
-            body.classList.toggle('light');
-            localStorage.setItem('theme', body.classList.contains('light') ? 'light' : 'dark');
-        }
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('login') === 'success') {
-                const googleName = urlParams.get('name') || 'Membre Google';
-                localStorage.setItem('isLoggedIn', 'true');
-                localStorage.setItem('userName', googleName);
-                window.history.replaceState({}, document.title, window.location.pathname);
-            }
-
-            if (localStorage.getItem('theme') === 'light') {
-                document.body.classList.remove('dark');
-                document.body.classList.add('light');
-            }
-            fetchUsersCount();
-            fetchPartantCount();
-            checkAuthStatus();
-        });
-        // Fonction de copie automatique dans le presse-papier avec retour visuel
-        function copyToClipboard(text, btnElement) {
-            navigator.clipboard.writeText(text).then(() => {
-                const originalText = btnElement.innerText;
-                btnElement.innerText = "Copié !";
-                btnElement.style.borderColor = "#22c55e";
-                btnElement.style.color = "#22c55e";
-                
-                setTimeout(() => {
-                    btnElement.innerText = originalText;
-                    btnElement.style.borderColor = "var(--brand-gold, #d4af37)";
-                    btnElement.style.color = "var(--brand-gold, #d4af37)";
-                }, 2000);
-            }).catch(err => {
-                console.error('Erreur lors de la copie : ', err);
-            });
-        }
-
-        // Gestion de l'ouverture de la modale de rendez-vous stratégique
-        function openRdvModal() {
-            const modal = document.getElementById('rdv-modal');
-            if (modal) {
-                modal.classList.add('active');
-            }
-        }
-
-        // Gestion de la fermeture de la modale
-        function closeRdvModal() {
-            const modal = document.getElementById('rdv-modal');
-            if (modal) {
-                modal.classList.remove('active');
-            }
-        }
-
-        // Fermeture de la modale si l'utilisateur clique en dehors de la carte
-        function closeRdvModalOutside(event) {
-            const modal = document.getElementById('rdv-modal');
-            if (event.target === modal) {
-                closeRdvModal();
-            }
-        }
-
-        // Traitement et soumission du formulaire de rendez-vous vers les e-mails cibles
-        function submitRdvForm(event) {
-            event.preventDefault();
-            
-            const nameInput = document.getElementById('rdv-name');
-            const emailInput = document.getElementById('rdv-email');
-            const orgInput = document.getElementById('rdv-org');
-            const subjectInput = document.getElementById('rdv-subject');
-
-            if (!nameInput || !emailInput || !subjectInput) return;
-
-            const name = nameInput.value;
-            const email = emailInput.value;
-            const org = orgInput ? orgInput.value : '';
-            const subject = subjectInput.value;
-
-            // Construction du lien mailto sécurisé vers les adresses officielles
-            const mailtoLink = `mailto:davidmathec@gmail.com,excellentunit@gmail.com?subject=Demande de RDV Stratégique : ${encodeURIComponent(subject)}&body=Nom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AOrganisation: ${encodeURIComponent(org)}%0D%0A%0D%0AObjet:%0D%0A${encodeURIComponent(subject)}`;
-            
-            window.location.href = mailtoLink;
-            closeRdvModal();
-        }
-    </script>
+    <script src="./index.js"></script>
 </body>
 </html>
