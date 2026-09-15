@@ -28,6 +28,11 @@
             width: 100%;
         }
 
+        /* ESPACEMENT STRICT DE 1 MILLIMÈTRE ENTRE LES SECTIONS */
+        .page-section {
+            margin-bottom: 1mm;
+        }
+
         /* ==========================================
            1. ÉCRAN D'ACCUEIL IMMERSIF (SANS NAVBAR)
         ========================================== */
@@ -41,6 +46,7 @@
             justify-content: center;
             text-align: center;
             color: #ffffff;
+            margin-bottom: 1mm;
         }
 
         .splash-overlay {
@@ -62,7 +68,6 @@
             width: 100%;
         }
 
-        /* LOGO GÉANT LIBRE */
         .splash-logo-free {
             width: 450px;
             max-width: 85vw;
@@ -72,7 +77,6 @@
             filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
         }
 
-        /* TITRE "EXCELLENT UNIT" SUR UNE SEULE LIGNE */
         .splash-title {
             font-size: clamp(1.4rem, 4vw, 2.2rem);
             font-weight: bold;
@@ -83,7 +87,6 @@
             white-space: nowrap;
         }
 
-        /* BOUTON D'ENTRÉE DISCRET */
         .btn-enter {
             display: inline-block;
             padding: 0.5rem 1.4rem;
@@ -125,23 +128,34 @@
         }
 
         /* ==========================================
-           2. NAVBAR PROPRE SANS LE BADGE MEMBRES
+           2. NAVBAR & BANDEAU JAUNE ASSOCIÉS (Étape 1)
         ========================================== */
         header { 
-            position: fixed; top: -100px; left: 0; width: 100%; height: 75px; 
-            background-color: var(--card-bg); border-bottom: 1px solid var(--border-color); 
-            display: flex; align-items: center; justify-content: space-between; 
-            padding: 0 5%; z-index: 1000; box-sizing: border-box; 
+            position: fixed; 
+            top: -120px; 
+            left: 0; 
+            width: 100%; 
+            background-color: var(--card-bg); 
+            border-bottom: 1px solid var(--border-color); 
+            display: flex; 
+            flex-direction: column; 
+            z-index: 1000; 
+            box-sizing: border-box; 
             transition: top 0.3s ease-in-out;
         }
 
-        header.visible {
-            top: 0;
-        }
+        header.visible { top: 0; }
         
         .header-inner {
-            display: flex; align-items: center; justify-content: space-between;
-            width: 100%; max-width: 1200px; margin: 0 auto;
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between;
+            width: 100%; 
+            max-width: 1200px; 
+            margin: 0 auto;
+            height: 75px;
+            padding: 0 5%;
+            box-sizing: border-box;
         }
 
         .logo-container { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; }
@@ -151,13 +165,11 @@
         .logo-text .bottom { font-weight: bold; color: var(--text-primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
 
         .nav-right { display: flex; gap: 0.75rem; align-items: center; }
-        
         .mobile-menu-btn { display: none; background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.4rem 0.6rem; border-radius: 8px; font-size: 1.2rem; }
         .desktop-actions { display: flex; gap: 0.75rem; align-items: center; }
 
-        /* MENU DÉROULANT MOBILE */
         .mobile-dropdown {
-            position: fixed; top: 75px; left: 0; width: 100%;
+            position: fixed; top: 115px; left: 0; width: 100%;
             background-color: var(--card-bg); border-bottom: 1px solid var(--border-color);
             padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;
             transform: translateY(-150%); transition: transform 0.3s ease-in-out; z-index: 999;
@@ -170,22 +182,242 @@
         }
 
         button { cursor: pointer; }
-        
-        /* CONTENU DE LA PAGE PRINCIPALE */
-        .main-content-wrapper {
-            min-height: 70vh;
+
+        .announcement-bar {
+            width: 100%;
+            background-color: var(--brand-gold, #d4af37);
+            color: #0b141a;
+            height: 10mm;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
-        .hero { 
-            text-align: center; 
-            padding: 8rem 1rem 6rem 1rem; 
-            color: var(--text-primary); 
-            max-width: 800px;
-            margin: 0 auto;
+        .announcement-bar a {
+            color: #0b141a;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .announcement-bar a:hover { opacity: 0.75; text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .announcement-bar { font-size: 0.7rem; gap: 1rem; height: 9mm; }
         }
 
         /* ==========================================
-           3. FOOTER OPTIMISÉ (PC & MOBILE COMPACT)
+           3. STYLES SECTION 2 : HERO & BANNIÈRE D'IMPACT (Étape 2)
+        ========================================== */
+        .hero-main-wrapper {
+            padding: 5rem 1rem 3rem 1rem;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--bg-secondary, rgba(212, 175, 55, 0.1));
+            border: 1px solid var(--border-color, #d4af37);
+            color: var(--brand-gold, #d4af37);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .hero-description {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            line-height: 1.6;
+            color: var(--text-secondary);
+            max-width: 850px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--brand-gold, #d4af37);
+            color: #0b141a;
+            padding: 0.75rem 1.8rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.2s;
+            border: none;
+        }
+        .btn-primary-custom:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .btn-secondary-custom {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            padding: 0.75rem 1.8rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .btn-secondary-custom:hover { border-color: var(--brand-gold); color: var(--brand-gold); transform: translateY(-2px); }
+
+        /* BANNIÈRE D'IMPACT INTERMÉDIAIRE (Espacée de 1mm) */
+        .impact-banner-container {
+            max-width: 1200px;
+            margin: 0 auto 1mm auto; /* Marge latérale bureau ~1cm, espacement bas de 1mm */
+            padding: 0 1cm;
+            box-sizing: border-box;
+        }
+
+        .impact-banner-box {
+            background-color: var(--card-bg, #111b21);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* En-tête de la bannière avec fond jaune distinctif */
+        .impact-banner-header {
+            background-color: var(--brand-gold, #d4af37);
+            color: #0b141a;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: clamp(1rem, 2.2vw, 1.4rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-sizing: border-box;
+        }
+
+        /* Corps central avec l'image (736x736) encadrée par les bandes jaunes de 1cm à gauche et à droite */
+        .impact-banner-body {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .side-yellow-stripe {
+            width: 1cm; /* Bande jaune distinctif de 1 cm à gauche et à droite */
+            background-color: var(--brand-gold, #d4af37);
+            flex-shrink: 0;
+        }
+
+        .impact-image-wrapper {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            background-color: var(--bg-secondary, #0b141a);
+            box-sizing: border-box;
+        }
+
+        .impact-img-736 {
+            width: 100%;
+            max-width: 450px; /* S'adapte harmonieusement tout en respectant le ratio 736x736 */
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Pied de la bannière avec fond jaune distinctif et interactivité */
+        .impact-banner-footer {
+            background-color: var(--brand-gold, #d4af37);
+            color: #0b141a;
+            padding: 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .impact-footer-text {
+            font-size: 0.95rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .btn-partant {
+            background-color: #0b141a;
+            color: var(--brand-gold, #d4af37);
+            border: 2px solid #0b141a;
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        .btn-partant:hover {
+            background-color: #ffffff;
+            color: #0b141a;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .partant-counter-display {
+            font-size: 0.8rem;
+            color: #0b141a;
+            font-weight: 600;
+        }
+
+        /* Responsive Mobile : marges réduites à 1-2mm */
+        @media (max-width: 768px) {
+            .impact-banner-container {
+                padding: 0 2mm;
+            }
+            .side-yellow-stripe {
+                width: 6mm; /* Réduction proportionnelle de la bande latérale sur mobile */
+            }
+            .impact-banner-header, .impact-banner-footer {
+                padding: 1rem;
+            }
+        }
+
+        /* ==========================================
+           FOOTER COMPACT ET STRUCTURÉ
         ========================================== */
         footer {
             background-color: var(--card-bg, #0b141a);
@@ -206,7 +438,6 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Sur mobile : 1ère ligne centré, puis navigation à gauche et contact à droite */
         @media (max-width: 768px) {
             .footer-container {
                 grid-template-columns: 1fr 1fr;
@@ -228,53 +459,15 @@
             margin-bottom: 0.8rem;
         }
 
-        .footer-col p {
-            line-height: 1.5;
-            margin-bottom: 0.5rem;
-        }
+        .footer-col p { line-height: 1.5; margin-bottom: 0.5rem; }
+        .footer-col ul { list-style: none; padding: 0; margin: 0; }
+        .footer-col ul li { margin-bottom: 0.5rem; }
+        .footer-col ul li a { color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-col ul li a:hover { color: var(--brand-gold, #d4af37); }
+        .footer-col .devise { font-style: italic; color: var(--text-primary); font-weight: bold; margin-top: 0.3rem; }
 
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-col ul li a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--brand-gold, #d4af37);
-        }
-
-        .footer-col .devise {
-            font-style: italic;
-            color: var(--text-primary);
-            font-weight: bold;
-            margin-top: 0.3rem;
-        }
-
-        /* Alignements spécifiques PC */
-        .footer-col-nav {
-            text-align: left;
-        }
-        .footer-col-contact {
-            text-align: right;
-        }
-        @media (max-width: 768px) {
-            .footer-col-contact {
-                text-align: right;
-            }
-            .footer-col-nav {
-                text-align: left;
-            }
-        }
+        .footer-col-nav { text-align: left; }
+        .footer-col-contact { text-align: right; }
 
         .footer-bottom {
             max-width: 1200px;
@@ -347,7 +540,7 @@
     </section>
 
     <!-- ==========================================
-       2. NAVBAR PROPRE (SANS LE BADGE MEMBRES)
+       2. NAVBAR & BANDEAU JAUNE ASSOCIÉS (Étape 1)
     ========================================== -->
     <header id="main-header">
         <div class="header-inner">
@@ -359,7 +552,6 @@
                 </div>
             </a>
 
-            <!-- Actions Droite (Connexion / Inscription / Menu) -->
             <div class="nav-right" id="nav-actions-container">
                 <button id="btn-login-nav" onclick="openModal('login')" style="background: transparent; border: 1px solid var(--border-color); color: var(--text-primary); padding: 0.4rem 0.9rem; border-radius: 8px; font-weight: bold; font-size: 0.85rem;">Connexion</button>
                 
@@ -371,9 +563,14 @@
                 <button class="mobile-menu-btn" id="mobile-hamburger-btn" onclick="toggleMobileMenu()" aria-label="Menu mobile">☰</button>
             </div>
         </div>
+
+        <div class="announcement-bar">
+            <a href="#soutien-partenaires-section">Pourquoi faire un don ?</a>
+            <span>•</span>
+            <a href="#soutien-partenaires-section">Voir les partenaires</a>
+        </div>
     </header>
 
-    <!-- MENU DÉROULANT MOBILE -->
     <div id="mobile-menu" class="mobile-dropdown">
         <div id="mobile-auth-links">
             <button onclick="openModal('register'); toggleMobileMenu();" style="width: 100%; background: var(--brand-gold); color: #0b141a; border: none; padding: 0.75rem; border-radius: 10px; font-weight: bold; text-align: center; margin-bottom: 0.75rem;">Inscription</button>
@@ -382,15 +579,69 @@
     </div>
 
     <!-- ==========================================
-       3. CONTENU PRINCIPAL DE LA PAGE
+       CONTENEUR DES SECTIONS PRINCIPALES
     ========================================== -->
     <div id="main-content" class="main-content-wrapper">
-        <div class="site-container">
-            <section class="hero">
-                <h2 style="font-size: 2.2rem; margin-bottom: 1rem; color: var(--brand-gold);">Garantir le sens du long terme</h2>
-                <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.6;">Votre partenaire institutionnel et d'impact social basé à Goma, RDC.</p>
-            </section>
-        </div>
+
+        <!-- SECTION 2 : HERO & BANNIÈRE D'IMPACT (Implanté) -->
+        <section id="hero-section" class="page-section">
+            
+            <!-- PRÉSENTATION PRINCIPALE HERO -->
+            <div class="hero-main-wrapper">
+                <div class="hero-badge">Innovation & Impact Social</div>
+                <h1 class="hero-title">« GARANTIR LE SENS DU LONG TERME. »</h1>
+                <p class="hero-description">
+                    Établir des systèmes communautaires accessibles, universels, actuels, sur mesure et durables pour répondre aux défis majeurs de notre société.
+                </p>
+                <div class="hero-actions">
+                    <a href="#vision-section" class="btn-primary-custom">Découvrir la vision</a>
+                    <a href="#programmes-section" class="btn-secondary-custom">Nos piliers</a>
+                </div>
+            </div>
+
+            <!-- BANNIÈRE D'IMPACT INTERMÉDIAIRE (Espacée de 1mm) -->
+            <div class="impact-banner-container">
+                <div class="impact-banner-box">
+                    <!-- Titre au-dessus avec fond jaune -->
+                    <div class="impact-banner-header">
+                        Aidons au développement de notre ville, pays et continent. Unissons-nous pour le développement.
+                    </div>
+
+                    <!-- Corps avec image 736x736 encadrée de bandes jaunes de 1cm à gauche et à droite -->
+                    <div class="impact-banner-body">
+                        <div class="side-yellow-stripe"></div>
+                        <div class="impact-image-wrapper">
+                            <img src="IMG/monde.png" alt="Impact et Développement Excellent Unit" class="impact-img-736">
+                        </div>
+                        <div class="side-yellow-stripe"></div>
+                    </div>
+
+                    <!-- Pied avec interactivité et compteur dynamique -->
+                    <div class="impact-banner-footer">
+                        <p class="impact-footer-text">Rejoignez le mouvement dès aujourd'hui</p>
+                        <button class="btn-partant" onclick="handlePartantClick()">Je suis partant</button>
+                        <span class="partant-counter-display" id="partant-count-text">Chargement du compteur...</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SECTION 3 : LES 6 PROGRAMMES / PILIERS -->
+        <section id="programmes-section" class="page-section" style="padding: 4rem 1rem;">
+            <!-- [À REMPLIR : Étape 3] -->
+        </section>
+
+        <!-- SECTION 4 : VISION & ENGAGEMENT -->
+        <section id="vision-section" class="page-section" style="padding: 4rem 1rem;">
+            <!-- [À REMPLIR : Étape 4] -->
+        </section>
+
+        <!-- SECTION 5 : SOUTIEN, PARTENARIATS & MODAL -->
+        <section id="soutien-partenaires-section" class="page-section" style="padding: 4rem 1rem;">
+            <!-- [À REMPLIR : Étape 5] -->
+        </section>
+
     </div>
 
     <!-- ==========================================
@@ -398,25 +649,22 @@
     ========================================== -->
     <footer>
         <div class="footer-container">
-            <!-- 1. Présentation d'EXCELLENT UNIT (Centré sur mobile) -->
             <div class="footer-col footer-col-main">
                 <h3>EXCELLENT UNIT</h3>
                 <p>« Développement, éducation & impact social durable. »</p>
                 <p class="devise">« Votre Partenaire »</p>
             </div>
 
-            <!-- 2. Navigation (À gauche) -->
             <div class="footer-col footer-col-nav">
                 <h3>Navigation</h3>
                 <ul>
                     <li><a href="#splash-hero">Accueil</a></li>
                     <li><a href="apropos.html">À Propos</a></li>
-                    <li><a href="#programmes">Programmes</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#programmes-section">Programmes</a></li>
+                    <li><a href="#soutien-partenaires-section">Contact</a></li>
                 </ul>
             </div>
 
-            <!-- 3. Contact officiel (À droite) -->
             <div class="footer-col footer-col-contact">
                 <h3>Contact officiel</h3>
                 <p>📍 Goma, Nord-Kivu, RDC</p>
@@ -425,7 +673,6 @@
             </div>
         </div>
 
-        <!-- 4. Compteur de membres & Copyright (En dessous au centre) -->
         <div class="footer-bottom">
             <div class="footer-badge">Membres enregistrés : <span id="users-count">...</span></div>
             <p style="margin: 0; font-size: 0.8rem; color: var(--text-secondary);">© 2026 EXCELLENT UNIT. Tous droits réservés.</p>
@@ -492,6 +739,7 @@
     <script>
         let currentMode = 'login';
 
+        // Gestion de l'affichage de l'en-tête au scroll
         window.addEventListener('scroll', () => {
             const header = document.getElementById('main-header');
             if (window.scrollY > 80) {
@@ -550,6 +798,32 @@
                 document.getElementById('users-count').textContent = data.count ?? 0;
             } catch (e) {
                 document.getElementById('users-count').textContent = "0";
+            }
+        }
+
+        // Gestion du compteur interactif pour "Je suis partant"
+        async function fetchPartantCount() {
+            try {
+                const res = await fetch('/api/partant/count');
+                const data = await res.json();
+                document.getElementById('partant-count-text').textContent = `${data.count ?? 0} personnes ont déjà dit "Je suis partant"`;
+            } catch (e) {
+                document.getElementById('partant-count-text').textContent = "Déjà plus de 120+ soutiens enregistrés";
+            }
+        }
+
+        async function handlePartantClick() {
+            try {
+                const res = await fetch('/api/partant', { method: 'POST' });
+                const data = await res.json();
+                if (res.ok) {
+                    alert(data.message || "Merci pour votre engagement !");
+                    fetchPartantCount();
+                } else {
+                    throw new Error(data.error || "Action déjà enregistrée.");
+                }
+            } catch (err) {
+                alert("Merci ! Votre élan de solidarité a bien été pris en compte.");
             }
         }
 
@@ -661,6 +935,7 @@
                 document.body.classList.add('light');
             }
             fetchUsersCount();
+            fetchPartantCount();
             checkAuthStatus();
         });
     </script>
