@@ -415,6 +415,146 @@
                 padding: 1rem;
             }
         }
+        /* --- SECTION PILIERS & PROGRAMMES --- */
+        #piliers-section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .piliers-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .piliers-badge {
+            display: inline-block;
+            background: var(--bg-secondary, rgba(212, 175, 55, 0.1));
+            border: 1px solid var(--border-color, #d4af37);
+            color: var(--brand-gold, #d4af37);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
+        }
+
+        .piliers-title {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        /* Grille : 3 par ligne sur PC, 2 par ligne sur mobile/tablette */
+        .piliers-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 900px) {
+            .piliers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.25rem;
+            }
+        }
+
+        .pilier-card {
+            background-color: var(--card-bg, #0b141a);
+            border: 1px solid var(--border-color, #222);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .pilier-card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Format carré strict 736x736 simulé via aspect-ratio */
+        .pilier-img-wrapper {
+            width: 100%;
+            aspect-ratio: 736 / 736;
+            overflow: hidden;
+            background: #0f1f2e;
+        }
+
+        .pilier-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pilier-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .pilier-tag {
+            color: var(--brand-gold, #d4af37);
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .pilier-heading {
+            font-size: 1.25rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .pilier-desc {
+            color: var(--text-secondary, #aaa);
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .pilier-link {
+            color: var(--brand-gold, #d4af37);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Séparateur de transition */
+        .transition-separator {
+            width: 100%;
+            height: 5mm;
+            background-color: var(--brand-gold, #d4af37);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .transition-separator span {
+            color: #0b141a;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            white-space: nowrap;
+            padding: 0 1rem;
+        }
 
         /* ==========================================
            FOOTER COMPACT ET STRUCTURÉ
@@ -627,10 +767,101 @@
 
         </section>
 
-        <!-- SECTION 3 : LES 6 PROGRAMMES / PILIERS -->
-        <section id="programmes-section" class="page-section" style="padding: 4rem 1rem;">
-            <!-- [À REMPLIR : Étape 3] -->
+        <!-- Section : Piliers & Programmes -->
+        <!-- Section : Piliers & Programmes -->
+        <section id="piliers-section" class="page-section">
+            <div class="piliers-header">
+                <span class="piliers-badge">Nos Axes Stratégiques</span>
+                <h2 class="piliers-title">Les 6 Programmes Officiels</h2>
+            </div>
+
+            <div class="piliers-grid">
+                
+                <!-- Pilier 1 -->
+                <div class="pilier-card">
+                    <div class="pilier-img-wrapper">
+                        <img src="IMG/copie.png" alt="Programme Éducation" class="pilier-img" onerror="this.src='IMG/img-acceuil/jpchd.veraxen.jpeg'">
+                    </div>
+                    <div class="pilier-content">
+                        <span class="pilier-tag">01 / Pilier</span>
+                        <h3 class="pilier-heading">Programme Éducation</h3>
+                        <p class="pilier-desc">Soutien scolaire, formations ciblées pour les jeunes de 8 à 28 ans et accompagnement des familles.</p>
+                        <a href="#education" class="pilier-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <!-- Pilier 2 -->
+                <div class="pilier-card">
+                    <div class="pilier-img-wrapper">
+                        <img src="IMG/archi.jpeg" alt="Investissement & Architecture" class="pilier-img" onerror="this.src='IMG/img-acceuil/jpchd.veraxen.jpeg'">
+                    </div>
+                    <div class="pilier-content">
+                        <span class="pilier-tag">02 / Pilier</span>
+                        <h3 class="pilier-heading">Investissement & Architecture</h3>
+                        <p class="pilier-desc">Études techniques, conception architecturale et développement d'infrastructures durables.</p>
+                        <a href="#architecture" class="pilier-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <!-- Pilier 3 -->
+                <div class="pilier-card">
+                    <div class="pilier-img-wrapper">
+                        <img src="IMG/Les femmes noir.jpeg" alt="Hygiène & Santé" class="pilier-img" onerror="this.src='IMG/img-acceuil/jpchd.veraxen.jpeg'">
+                    </div>
+                    <div class="pilier-content">
+                        <span class="pilier-tag">03 / Pilier</span>
+                        <h3 class="pilier-heading">Hygiène & Santé</h3>
+                        <p class="pilier-desc">Sensibilisation aux conditions sanitaires, prévention et lutte contre les violences basées sur le genre (VBG).</p>
+                        <a href="#sante" class="pilier-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <!-- Pilier 4 -->
+                <div class="pilier-card">
+                    <div class="pilier-img-wrapper">
+                        <img src="IMG/environnement.jpeg" alt="WASH — Eau & Environnement" class="pilier-img" onerror="this.src='IMG/img-acceuil/jpchd.veraxen.jpeg'">
+                    </div>
+                    <div class="pilier-content">
+                        <span class="pilier-tag">04 / Pilier</span>
+                        <h3 class="pilier-heading">WASH — Eau & Environnement</h3>
+                        <p class="pilier-desc">Gestion rationnelle de l'eau, assainissement des milieux de vie et initiatives d'éco-protection.</p>
+                        <a href="#wash" class="pilier-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <!-- Pilier 5 -->
+                <div class="pilier-card">
+                    <div class="pilier-img-wrapper">
+                        <img src="IMG/leadership.jpeg" alt="Leadership, Management & Gestion" class="pilier-img" onerror="this.src='IMG/img-acceuil/jpchd.veraxen.jpeg'">
+                    </div>
+                    <div class="pilier-content">
+                        <span class="pilier-tag">05 / Pilier</span>
+                        <h3 class="pilier-heading">Leadership, Management & Gestion</h3>
+                        <p class="pilier-desc">Formations avancées, conseils stratégiques et encadrement de la nouvelle génération de jeunes leaders.</p>
+                        <a href="#leadership" class="pilier-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+                <!-- Pilier 6 -->
+                <div class="pilier-card">
+                    <div class="pilier-img-wrapper">
+                        <img src="IMG/recherche.jpeg" alt="Recherche" class="pilier-img" onerror="this.src='IMG/img-acceuil/jpchd.veraxen.jpeg'">
+                    </div>
+                    <div class="pilier-content">
+                        <span class="pilier-tag">06 / Pilier</span>
+                        <h3 class="pilier-heading">Recherche</h3>
+                        <p class="pilier-desc">Analyses approfondies, conception de stratégies et maximisation de la profondeur de création de valeur.</p>
+                        <a href="#recherche" class="pilier-link">En savoir plus →</a>
+                    </div>
+                </div>
+
+            </div>
         </section>
+
+        <!-- Séparateur de transition -->
+        <div class="transition-separator">
+            <span>Vous êtes au bon endroit</span>
+        </div>
 
         <!-- SECTION 4 : VISION & ENGAGEMENT -->
         <section id="vision-section" class="page-section" style="padding: 4rem 1rem;">
