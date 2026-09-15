@@ -688,8 +688,213 @@
             color: var(--text-primary); outline: none; font-size: 0.85rem;
         }
         .modal-card input:focus { border-color: var(--brand-gold); }
+        
         .modal-card label { color: var(--text-secondary); }
-    </style>
+                /* --- Styles globaux de la section Soutien & Partenariats --- */
+        #soutien-section {
+            color: var(--text-primary);
+        }
+
+        /* --- Styles du Footer Institutionnel --- */
+        footer {
+            background-color: var(--card-bg, #0b1218);
+            border-top: 1px solid var(--border-color, #d4af37);
+            padding: 4rem 1rem 2rem 1rem;
+            margin-top: 4rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h3 {
+            color: var(--brand-gold, #d4af37);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col .devise {
+            font-style: italic;
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            opacity: 0.9;
+        }
+
+        .footer-col-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-col-nav li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col-nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .footer-col-nav a:hover {
+            color: var(--brand-gold, #d4af37);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--brand-gold, #d4af37);
+            padding: 0.4rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--brand-gold, #d4af37);
+            font-weight: 600;
+        }
+
+        /* --- Styles de la Modale de Rendez-vous --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            background-color: var(--card-bg, #111b21);
+            border: 1px solid var(--brand-gold, #d4af37);
+            border-radius: 16px;
+            padding: 2.5rem;
+            width: 100%;
+            max-width: 480px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        /* --- Champs de Formulaire de la Modale --- */
+        .modal-card label {
+            color: var(--text-secondary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-card input {
+            width: 100%;
+            background-color: var(--bg-secondary, #0b1218);
+            border: 1px solid var(--border-color, rgba(212, 175, 55, 0.3));
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary, #fff);
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .modal-card input:focus {
+            border-color: var(--brand-gold, #d4af37);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
+        }
+
+        .modal-card input::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* --- Boutons personnalisés réutilisables --- */
+        .btn-primary-custom {
+            background-color: var(--brand-gold, #d4af37);
+            color: #0b1218;
+            border: none;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: filter 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-primary-custom:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary-custom {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--brand-gold, #d4af37);
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary-custom:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+        }
+
+        /* --- Responsive pour les petits écrans --- */
+        @media (max-width: 768px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+   </style>
 </head>
 <body class="dark">
 
@@ -898,14 +1103,108 @@
         </div>
 
         <!-- SECTION 4 : VISION & ENGAGEMENT -->
-        <section id="vision-section" class="page-section" style="padding: 4rem 1rem;">
-            <!-- [À REMPLIR : Étape 4] -->
-        </section>
+        <!-- Section : Soutien & Partenariats -->
+    <section id="soutien-section" class="page-section" style="padding: 4rem 1rem; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- En-tête de section -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <span class="piliers-badge">Engagement & Réseau</span>
+            <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: bold; text-transform: uppercase; color: var(--text-primary); margin: 1rem 0 0.5rem 0;">
+                Soutien Direct & Partenariats
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 0.95rem;">Bâtissez l'avenir à nos côtés en participant activement à nos initiatives.</p>
+        </div>
 
-        <!-- SECTION 5 : SOUTIEN, PARTENARIATS & MODAL -->
-        <section id="soutien-partenaires-section" class="page-section" style="padding: 4rem 1rem;">
-            <!-- [À REMPLIR : Étape 5] -->
-        </section>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            
+            <!-- Bloc 1 : Mobile Money / Soutien Direct -->
+            <div style="background-color: var(--card-bg, #111b21); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span style="color: var(--brand-gold); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Contribution Financière</span>
+                    <h3 style="font-size: 1.3rem; font-weight: bold; text-transform: uppercase; margin: 0.5rem 0 1rem 0; color: var(--text-primary);">Soutien Mobile Money</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;">
+                        Apportez une contribution directe aux programmes de terrain via nos canaux sécurisés officiels en RDC.
+                    </p>
+                    
+                    <!-- Ligne Airtel -->
+                    <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                        <div>
+                            <strong style="display: block; font-size: 0.75rem; color: var(--brand-gold);">AIRTEL MONEY</strong>
+                            <span id="airtel-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 977 803 479</span>
+                        </div>
+                        <button onclick="copyToClipboard('+243977803479', this)" style="background: transparent; border: 1px solid var(--brand-gold); color: var(--brand-gold); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+                    </div>
+
+                    <!-- Ligne Orange -->
+                    <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                        <div>
+                            <strong style="display: block; font-size: 0.75rem; color: var(--brand-gold);">ORANGE MONEY</strong>
+                            <span id="orange-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 890 000 000</span>
+                        </div>
+                        <button onclick="copyToClipboard('+243890000000', this)" style="background: transparent; border: 1px solid var(--brand-gold); color: var(--brand-gold); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/243977803479?text=Bonjour%20EXCELLENT%20UNIT,%20je%20souhaite%20confirmer%20un%20soutien%20financier." target="_blank" class="btn-primary-custom" style="text-align: center; display: block;">
+                    Confirmer sur WhatsApp →
+                </a>
+            </div>
+
+            <!-- Bloc 2 : Partenariats & Bâtisseurs -->
+            <div style="background-color: var(--card-bg, #111b21); border: 1px solid var(--border-color); border-radius: 12px; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span style="color: var(--brand-gold); font-size: 0.75rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Collaboration & Institutions</span>
+                    <h3 style="font-size: 1.3rem; font-weight: bold; text-transform: uppercase; margin: 0.5rem 0 1rem 0; color: var(--text-primary);">Partenariats Stratégiques</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;">
+                        Décideurs, leaders et institutions : unissons nos expertises pour concevoir des synergies durables et porter des projets d'envergure à fort impact social.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; font-size: 0.85rem; color: var(--text-secondary);">
+                        <li style="margin-bottom: 0.5rem;">✓ Co-signature de programmes sectoriels</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Alignement institutionnel sur mesure</li>
+                        <li style="margin-bottom: 0.5rem;">✓ Implication des parties prenantes clés</li>
+                    </ul>
+                </div>
+
+                <button onclick="openRdvModal()" class="btn-primary-custom" style="width: 100%; text-align: center;">
+                    Planifier un RDV Stratégique
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    
+    <!-- MODAL DE RENDEZ-VOUS STRATÉGIQUE -->
+    <div id="rdv-modal" class="modal-overlay" onclick="closeRdvModalOutside(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 style="color: var(--brand-gold); font-size: 1.1rem; text-transform: uppercase; margin: 0;">Planifier un RDV Stratégique</h3>
+                <button onclick="closeRdvModal()" style="background: transparent; border: none; color: var(--text-primary); font-size: 1.2rem; cursor: pointer;">✕</button>
+            </div>
+            
+            <form onsubmit="submitRdvForm(event)" style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Nom complet</label>
+                    <input type="text" id="rdv-name" required placeholder="Ex. Jean Mukendi">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Adresse e-mail</label>
+                    <input type="email" id="rdv-email" required placeholder="nom@exemple.com">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Organisation / Institution</label>
+                    <input type="text" id="rdv-org" placeholder="Nom de votre structure (facultatif)">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Objet de la collaboration</label>
+                    <input type="text" id="rdv-subject" required placeholder="Ex. Partenariat Éducation ou Projet WASH">
+                </div>
+                <button type="submit" class="btn-primary-custom" style="width: 100%; margin-top: 0.5rem; text-align: center;">
+                    Envoyer la demande de RDV
+                </button>
+            </form>
+        </div>
+    </div>
 
     </div>
 
@@ -1203,6 +1502,70 @@
             fetchPartantCount();
             checkAuthStatus();
         });
+        // Fonction de copie automatique dans le presse-papier avec retour visuel
+        function copyToClipboard(text, btnElement) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btnElement.innerText;
+                btnElement.innerText = "Copié !";
+                btnElement.style.borderColor = "#22c55e";
+                btnElement.style.color = "#22c55e";
+                
+                setTimeout(() => {
+                    btnElement.innerText = originalText;
+                    btnElement.style.borderColor = "var(--brand-gold, #d4af37)";
+                    btnElement.style.color = "var(--brand-gold, #d4af37)";
+                }, 2000);
+            }).catch(err => {
+                console.error('Erreur lors de la copie : ', err);
+            });
+        }
+
+        // Gestion de l'ouverture de la modale de rendez-vous stratégique
+        function openRdvModal() {
+            const modal = document.getElementById('rdv-modal');
+            if (modal) {
+                modal.classList.add('active');
+            }
+        }
+
+        // Gestion de la fermeture de la modale
+        function closeRdvModal() {
+            const modal = document.getElementById('rdv-modal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
+
+        // Fermeture de la modale si l'utilisateur clique en dehors de la carte
+        function closeRdvModalOutside(event) {
+            const modal = document.getElementById('rdv-modal');
+            if (event.target === modal) {
+                closeRdvModal();
+            }
+        }
+
+        // Traitement et soumission du formulaire de rendez-vous vers les e-mails cibles
+        function submitRdvForm(event) {
+            event.preventDefault();
+            
+            const nameInput = document.getElementById('rdv-name');
+            const emailInput = document.getElementById('rdv-email');
+            const orgInput = document.getElementById('rdv-org');
+            const subjectInput = document.getElementById('rdv-subject');
+
+            if (!nameInput || !emailInput || !subjectInput) return;
+
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const org = orgInput ? orgInput.value : '';
+            const subject = subjectInput.value;
+
+            // Construction du lien mailto sécurisé vers les adresses officielles
+            const mailtoLink = `mailto:davidmathec@gmail.com,excellentunit@gmail.com?subject=Demande de RDV Stratégique : ${encodeURIComponent(subject)}&body=Nom: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0AOrganisation: ${encodeURIComponent(org)}%0D%0A%0D%0AObjet:%0D%0A${encodeURIComponent(subject)}`;
+            
+            window.location.href = mailtoLink;
+            closeRdvModal();
+        }
     </script>
 </body>
 </html>
