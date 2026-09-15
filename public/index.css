@@ -211,7 +211,7 @@ button { cursor: pointer; }
     3. STYLES SECTION 2 : HERO & BANNIÈRE D'IMPACT
 ========================================== */
 .hero-main-wrapper {
-    padding: 5rem 1rem 1.5rem 1rem;
+    padding: 3rem 1rem 1rem 1rem; /* Remonté vers le haut (padding top réduit) */
     text-align: center;
     max-width: 1000px;
     margin: 0 auto;
@@ -223,31 +223,31 @@ button { cursor: pointer; }
     background: var(--bg-secondary, rgba(212, 175, 55, 0.1));
     border: 1px solid var(--border-color, #d4af37);
     color: var(--brand-gold, #d4af37);
-    padding: 0.4rem 1.2rem;
+    padding: 0.35rem 1rem;
     border-radius: 30px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero-title {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.8rem, 4.5vw, 3.2rem); /* Légèrement diminué mais gardant de la prestance */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: var(--text-primary);
 }
 
 .hero-description {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
-    line-height: 1.6;
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem); /* Taille de texte légèrement diminuée */
+    line-height: 1.5;
     color: var(--text-secondary);
     max-width: 850px;
-    margin: 0 auto 2.5rem auto;
+    margin: 0 auto 2rem auto;
 }
 
 .hero-actions {
@@ -315,7 +315,7 @@ button { cursor: pointer; }
     padding: 1.5rem 2rem;
     text-align: center;
     font-weight: bold;
-    font-size: clamp(1rem, 2.2vw, 1.4rem);
+    font-size: clamp(0.9rem, 2vw, 1.3rem); /* Légèrement ajusté en responsive */
     text-transform: uppercase;
     letter-spacing: 1px;
     box-sizing: border-box;
@@ -340,15 +340,13 @@ button { cursor: pointer; }
     justify-content: center;
     align-items: center;
     padding: 1.5rem;
-    /* On change le fond sombre en jaune */
     background-color: var(--brand-gold, #d4af37);
     box-sizing: border-box;
 }
 
 .impact-img-736 {
-    /* Taille fixe augmentée (on passe de 450px à 540px par exemple) */
     width: 540px;
-    max-width: none; /* Désactive la limite responsive pour respecter ta demande */
+    max-width: 100%; /* Rendu responsive pour les petits écrans */
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
@@ -369,7 +367,7 @@ button { cursor: pointer; }
 }
 
 .impact-footer-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -385,7 +383,7 @@ button { cursor: pointer; }
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -408,7 +406,7 @@ button { cursor: pointer; }
         padding: 0 2mm;
     }
     .side-yellow-stripe {
-        width: 6mm;
+        width: 4mm;
     }
     .impact-banner-header, .impact-banner-footer {
         padding: 1rem;
@@ -417,7 +415,7 @@ button { cursor: pointer; }
 
 /* --- SECTION PILIERS & PROGRAMMES --- */
 #piliers-section {
-    padding: 4rem 1rem 0.5rem 1rem;
+    padding: 3rem 1rem 0.5rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
@@ -425,7 +423,7 @@ button { cursor: pointer; }
 
 .piliers-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .piliers-badge {
@@ -433,17 +431,17 @@ button { cursor: pointer; }
     background: var(--bg-secondary, rgba(212, 175, 55, 0.1));
     border: 1px solid var(--border-color, #d4af37);
     color: var(--brand-gold, #d4af37);
-    padding: 0.4rem 1.2rem;
+    padding: 0.35rem 1rem;
     border-radius: 30px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .piliers-title {
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-size: clamp(1.6rem, 2.8vw, 2.3rem);
     font-weight: bold;
     text-transform: uppercase;
     color: var(--text-primary);
@@ -465,7 +463,7 @@ button { cursor: pointer; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 420px;
+    min-height: 400px;
     transition: transform 0.3s ease;
 }
 
@@ -512,71 +510,81 @@ button { cursor: pointer; }
 
 .pilier-tag {
     color: var(--brand-gold, #d4af37);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .pilier-heading {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: bold;
     text-transform: uppercase;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.6rem;
 }
 
 .pilier-desc {
     color: var(--text-secondary, #aaa);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin-bottom: 1.2rem;
 }
 
 .pilier-link {
     color: var(--brand-gold, #d4af37);
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
 }
 
-@media (max-width: 900px) {
+/* RESPONSIVE : Piliers 2 par 2 sur tablettes / écrans intermédiaires, et 1 par 1 sur petits mobiles */
+@media (max-width: 1024px) {
     .piliers-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr); /* 2 à 2 */
+        gap: 1.2rem;
     }
+}
 
+@media (max-width: 600px) {
+    .piliers-grid {
+        grid-template-columns: 1fr; /* 1 par 1 sur très petits mobiles si besoin */
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 900px) {
     .pilier-card {
         border-radius: 8px;
-        min-height: 360px;
+        min-height: 340px;
     }
 
     .pilier-content {
-        padding: 1.2rem;
+        padding: 1rem;
     }
 
     .pilier-tag {
-        font-size: 0.7rem;
-        margin-bottom: 0.3rem;
+        font-size: 0.65rem;
+        margin-bottom: 0.2rem;
     }
 
     .pilier-heading {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
     }
 
     .pilier-desc {
-        font-size: 0.85rem;
-        line-height: 1.4;
-        margin-bottom: 1rem;
+        font-size: 0.8rem;
+        line-height: 1.35;
+        margin-bottom: 0.8rem;
     }
 
     .pilier-link {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 }
 
@@ -682,14 +690,14 @@ footer {
 
 .footer-col-left h3 {
     color: var(--brand-gold, #d4af37);
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
     margin: 0;
     letter-spacing: 0.5px;
 }
 
 .footer-col-left p {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     margin: 0;
     line-height: 1.4;
 }
@@ -706,7 +714,7 @@ footer {
     color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -721,11 +729,12 @@ footer {
     padding-top: 1rem;
     border-top: 1px solid rgba(212, 175, 55, 0.15);
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centré en dessous */
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    text-align: center;
 }
 
 .footer-badge {
@@ -733,24 +742,48 @@ footer {
     border: 1px solid var(--brand-gold, #d4af37);
     padding: 0.3rem 0.8rem;
     border-radius: 20px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: var(--brand-gold, #d4af37);
     font-weight: 600;
 }
 
+/* Responsive Footer Spécifique */
 @media (max-width: 768px) {
     .footer-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+        flex-direction: row; /* Reste potentiellement côte à côte si l'espace le permet, ou bascule proprement */
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.5rem;
     }
     
     .footer-col-right {
-        justify-content: center;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.6rem;
     }
 
     .footer-bottom {
         flex-direction: column;
         text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-col-left {
+        align-items: center;
+    }
+
+    .footer-col-right {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
     }
 }
