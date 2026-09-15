@@ -900,24 +900,7 @@
 <body class="dark">
 
     <!-- ==========================================
-       1. ÉCRAN D'ACCUEIL (IMMERSIF)
-    ========================================== -->
-    <section id="splash-hero" class="splash-container">
-        <div class="splash-overlay"></div>
-        
-        <div class="splash-content">
-            <img src="IMG/logo.png" alt="Logo Excellent Unit" class="splash-logo-free">
-            <h1 class="splash-title"><span style="color: var(--brand-gold);">EXCELLENT</span> <span style="color: var(--text-primary);">UNIT</span></h1>
-            <a href="#main-content" class="btn-enter">Entrer dans la plateforme</a>
-        </div>
-
-        <div class="scroll-down-hint">
-            <span>Défiler vers le bas</span>
-        </div>
-    </section>
-
-    <!-- ==========================================
-       2. NAVBAR & BANDEAU JAUNE ASSOCIÉS (Étape 1)
+       1. NAVBAR & BANDEAU JAUNE ASSOCIÉS
     ========================================== -->
     <header id="main-header">
         <div class="header-inner">
@@ -991,11 +974,11 @@
                     </div>
 
                     <!-- Pied avec interactivité et compteur dynamique -->
-                    <!-- Pied avec interactivité et compteur dynamique -->
                     <div class="impact-banner-footer" style="display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap;">
                         <button id="btn-partant-action" class="btn-partant" onclick="handlePartantClick()" style="background: var(--brand-gold); color: #0b141a; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; font-weight: bold; font-size: 0.9rem; cursor: pointer;">Je suis partant</button>
                         <span class="partant-counter-display" id="partant-count-text" style="color: var(--text-primary); font-weight: 600; font-size: 0.95rem;">0 soutiens</span>
                     </div>
+                </div>
             </div>
 
         </section>
@@ -1119,26 +1102,26 @@
                             Apportez une contribution directe aux programmes de terrain via nos canaux sécurisés officiels en RDC.
                         </p>
                         
-                        <!-- Ligne Airtel (Rouge) -->
+                        <!-- Ligne Airtel -->
                         <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
                             <div>
                                 <strong style="display: block; font-size: 0.75rem; color: #ef4444;">AIRTEL MONEY</strong>
                                 <span id="airtel-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 977 803 479</span>
                             </div>
-                            <button onclick="copyToClipboard('+243977803479', this)" style="background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+                            <button onclick="copyToClipboard('+243977803479', this)" style="background: transparent; border: 1px solid #ef4444; color: #ef4444; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; cursor: pointer;">Copier</button>
                         </div>
 
-                        <!-- Ligne Orange (Orange) -->
+                        <!-- Ligne Orange -->
                         <div style="background: var(--bg-secondary); padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                             <div>
                                 <strong style="display: block; font-size: 0.75rem; color: #f97316;">ORANGE MONEY</strong>
                                 <span id="orange-num" style="font-family: monospace; font-size: 0.95rem; color: var(--text-primary);">+243 890 000 000</span>
                             </div>
-                            <button onclick="copyToClipboard('+243890000000', this)" style="background: transparent; border: 1px solid #f97316; color: #f97316; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold;">Copier</button>
+                            <button onclick="copyToClipboard('+243890000000', this)" style="background: transparent; border: 1px solid #f97316; color: #f97316; padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: bold; cursor: pointer;">Copier</button>
                         </div>
                     </div>
 
-                    <!-- Bouton WhatsApp (Vert) -->
+                    <!-- Bouton WhatsApp -->
                     <a href="https://wa.me/243977803479?text=Bonjour%20EXCELLENT%20UNIT,%20je%20souhaite%20confirmer%20un%20soutien%20financier." target="_blank" style="background-color: #22c55e; color: #ffffff; border: none; border-radius: 8px; padding: 0.75rem 1.5rem; font-weight: bold; text-transform: uppercase; font-size: 0.85rem; text-align: center; display: block; text-decoration: none; transition: filter 0.3s ease;">
                         Confirmer sur WhatsApp →
                     </a>
@@ -1159,7 +1142,7 @@
                         </ul>
                     </div>
 
-                    <button onclick="openRdvModal()" class="btn-primary-custom" style="width: 100%; text-align: center;">
+                    <button onclick="openRdvModal()" class="btn-primary-custom" style="width: 100%; text-align: center; cursor: pointer;">
                         Planifier un RDV Stratégique
                     </button>
                 </div>
@@ -1192,7 +1175,7 @@
                         <label style="display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.3rem;">Objet de la collaboration</label>
                         <input type="text" id="rdv-subject" required placeholder="Ex. Partenariat Éducation ou Projet WASH">
                     </div>
-                    <button type="submit" class="btn-primary-custom" style="width: 100%; margin-top: 0.5rem; text-align: center;">
+                    <button type="submit" class="btn-primary-custom" style="width: 100%; margin-top: 0.5rem; text-align: center; cursor: pointer;">
                         Envoyer la demande de RDV
                     </button>
                 </form>
@@ -1202,7 +1185,7 @@
     </div>
 
     <!-- ==========================================
-       4. FOOTER COMPACT ET STRUCTURÉ
+       3. FOOTER COMPACT ET STRUCTURÉ
     ========================================== -->
     <footer>
         <div class="footer-container">
@@ -1265,7 +1248,7 @@
                     <input id="password-input" type="password" required placeholder="••••••••••••" />
                 </div>
 
-                <button type="submit" id="auth-submit-btn" style="width: 100%; padding: 0.85rem; border-radius: 10px; font-weight: bold; text-transform: uppercase; background: var(--brand-gold); color: #0b141a; border: none; font-size: 0.85rem; margin-top: 0.5rem; transition: opacity 0.2s;">
+                <button type="submit" id="auth-submit-btn" style="width: 100%; padding: 0.85rem; border-radius: 10px; font-weight: bold; text-transform: uppercase; background: var(--brand-gold); color: #0b141a; border: none; font-size: 0.85rem; margin-top: 0.5rem; transition: opacity 0.2s; cursor: pointer;">
                     Se connecter
                 </button>
             </form>
@@ -1291,7 +1274,6 @@
             <div id="modal-switch-footer" style="text-align: center; margin-top: 1.2rem; font-size: 0.8rem; color: var(--text-secondary);"></div>
         </div>
     </div>
-
 
     <!-- SCRIPTS -->
     <script src="./index.js"></script>
